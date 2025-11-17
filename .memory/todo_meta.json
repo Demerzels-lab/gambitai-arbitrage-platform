@@ -12,21 +12,21 @@
         "id": "2",
         "content": "Research dan integrasi API Polymarket dan Kalshi",
         "details": "Research Polymarket dan Kalshi APIs untuk crypto/political events, rate limits, data structure, authentication, markets/events data",
-        "status": "in_progress",
+        "status": "completed",
         "priority": "high"
       },
       "3": {
         "id": "3",
         "content": "Design sistem monitoring dan alert real-time",
         "details": "Design sistem monitoring arbitrage setiap 1 menit, Telegram bot integration, calculation engine untuk optimal bet amounts, architectural design dengan SOLID principles",
-        "status": "pending",
+        "status": "completed",
         "priority": "high"
       },
       "4": {
         "id": "4",
         "content": "Develop full-stack web application",
-        "details": "Full-stack app dengan: User auth (multi-user), Real-time dashboard, Markets/events display, Historical data, Telegram bot alerts, Arbitrage calculator, How it works page, Roadmap page",
-        "status": "pending",
+        "details": "Full-stack GambitAI app: User auth, Real-time dashboard, Markets/events display (Kalshi & Polymarket), Historical data, Telegram bot alerts, Arbitrage calculator, How it works page, Roadmap page - Full English UI - SOLID principles architecture",
+        "status": "in_progress",
         "priority": "high"
       },
       "5": {
