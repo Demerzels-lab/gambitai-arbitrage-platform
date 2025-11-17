@@ -3,15 +3,21 @@ import { useState, useEffect } from 'react';
 import { supabase } from './lib/supabase';
 import { User } from '@supabase/supabase-js';
 
-// Pages
+// Public Pages
+import Landing from './pages/Landing';
+import About from './pages/About';
+import PricingPage from './pages/PricingPage';
+import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import HowItWorks from './pages/HowItWorks';
+import Roadmap from './pages/Roadmap';
+
+// Protected Pages
 import Dashboard from './pages/Dashboard';
 import Markets from './pages/Markets';
 import Analytics from './pages/Analytics';
 import Calculator from './pages/Calculator';
-import HowItWorks from './pages/HowItWorks';
-import Roadmap from './pages/Roadmap';
 import Settings from './pages/Settings';
 
 // Layout
@@ -50,10 +56,14 @@ function App() {
     <Router>
       <Routes>
         {/* Public routes */}
-        <Route path="/login" element={!user ? <Login /> : <Navigate to="/dashboard" />} />
-        <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/dashboard" />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
         <Route path="/roadmap" element={<Roadmap />} />
+        <Route path="/login" element={!user ? <Login /> : <Navigate to="/dashboard" />} />
+        <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/dashboard" />} />
 
         {/* Protected routes */}
         <Route
@@ -117,8 +127,8 @@ function App() {
           }
         />
 
-        {/* Default redirect */}
-        <Route path="/" element={<Navigate to={user ? "/dashboard" : "/login"} />} />
+        {/* Catch all - redirect to landing */}
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );

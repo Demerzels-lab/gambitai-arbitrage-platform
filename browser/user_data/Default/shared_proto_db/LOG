@@ -1,2 +1,3 @@
-2025/11/17-12:12:41.501 7ed Creating DB /workspace/browser/user_data/Default/shared_proto_db since it was missing.
-2025/11/17-12:12:41.600 7ed Reusing MANIFEST /workspace/browser/user_data/Default/shared_proto_db/MANIFEST-000001
+2025/11/17-13:33:37.230 4ea Reusing MANIFEST /workspace/browser/user_data/Default/shared_proto_db/MANIFEST-000001
+2025/11/17-13:33:37.280 4ea Recovering log #3
+2025/11/17-13:33:37.283 4ea Reusing old log /workspace/browser/user_data/Default/shared_proto_db/000003.log 
