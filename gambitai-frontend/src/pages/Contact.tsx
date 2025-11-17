@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { TrendingUp, Mail, MessageSquare, MapPin } from 'lucide-react';
+import { TrendingUp, Mail, MessageSquare, MapPin, CheckCircle } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -13,9 +13,22 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('Form submitted successfully!');
     // In production, this would send to backend
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    console.log('Submitted state set to true');
+    // Clear form after successful submission
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
+    // Hide success message after 8 seconds for better visibility
+    setTimeout(() => {
+      setSubmitted(false);
+      console.log('Submitted state set to false');
+    }, 8000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -27,6 +40,23 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+      {/* Success Toast Notification - Fixed Position */}
+      {submitted && (
+        <div className="fixed top-24 right-8 z-50 max-w-md animate-fade-in">
+          <div className="p-6 bg-emerald-600 border-2 border-emerald-400 rounded-xl shadow-2xl shadow-emerald-500/50">
+            <div className="flex items-start space-x-4">
+              <div className="bg-white/20 p-2 rounded-lg">
+                <CheckCircle className="h-8 w-8 text-white" />
+              </div>
+              <div className="flex-1">
+                <p className="text-white font-bold text-xl mb-1">Success!</p>
+                <p className="text-emerald-50 text-base">Your message has been sent successfully. We'll respond within 24 hours.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,15 +66,15 @@ export default function Contact() {
               <span className="text-2xl font-bold text-white">GambitAI</span>
             </Link>
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="/" className="text-gray-300 hover:text-white transition-colors">Beranda</Link>
-              <Link to="/about" className="text-gray-300 hover:text-white transition-colors">Tentang</Link>
-              <Link to="/pricing" className="text-gray-300 hover:text-white transition-colors">Harga</Link>
-              <Link to="/login" className="text-gray-300 hover:text-white transition-colors">Masuk</Link>
+              <Link to="/" className="text-gray-300 hover:text-white transition-colors">Home</Link>
+              <Link to="/about" className="text-gray-300 hover:text-white transition-colors">About</Link>
+              <Link to="/pricing" className="text-gray-300 hover:text-white transition-colors">Pricing</Link>
+              <Link to="/login" className="text-gray-300 hover:text-white transition-colors">Sign In</Link>
               <Link 
                 to="/signup" 
                 className="px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold"
               >
-                Mulai Gratis
+                Get Started
               </Link>
             </div>
           </div>
@@ -55,10 +85,10 @@ export default function Contact() {
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Hubungi Kami
+            Contact Us
           </h1>
           <p className="text-xl text-gray-300">
-            Ada pertanyaan? Tim kami siap membantu Anda. Hubungi kami melalui form di bawah atau kontak langsung.
+            Have questions? Our team is ready to help you. Contact us through the form below or reach out directly.
           </p>
         </div>
       </section>
@@ -68,19 +98,13 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-gray-900 p-8 rounded-xl border border-gray-700">
-              <h2 className="text-3xl font-bold text-white mb-6">Kirim Pesan</h2>
-              
-              {submitted && (
-                <div className="mb-6 p-4 bg-emerald-500/10 border border-emerald-500 rounded-lg">
-                  <p className="text-emerald-500">Pesan Anda telah terkirim! Kami akan merespons dalam 24 jam.</p>
-                </div>
-              )}
+            <div className="bg-gray-900 p-8 rounded-xl border border-gray-700 relative">
+              <h2 className="text-3xl font-bold text-white mb-6">Send Message</h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                    Nama Lengkap
+                    Full Name
                   </label>
                   <input
                     type="text"
@@ -90,7 +114,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors"
-                    placeholder="Nama Anda"
+                    placeholder="Your name"
                   />
                 </div>
 
@@ -112,7 +136,7 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
-                    Subjek
+                    Subject
                   </label>
                   <input
                     type="text"
@@ -122,13 +146,13 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors"
-                    placeholder="Pertanyaan tentang..."
+                    placeholder="Question about..."
                   />
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                    Pesan
+                    Message
                   </label>
                   <textarea
                     id="message"
@@ -138,7 +162,7 @@ export default function Contact() {
                     required
                     rows={6}
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors resize-none"
-                    placeholder="Tulis pesan Anda di sini..."
+                    placeholder="Write your message here..."
                   />
                 </div>
 
@@ -146,7 +170,7 @@ export default function Contact() {
                   type="submit"
                   className="w-full px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold"
                 >
-                  Kirim Pesan
+                  Send Message
                 </button>
               </form>
             </div>
@@ -154,9 +178,9 @@ export default function Contact() {
             {/* Contact Info */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl font-bold text-white mb-6">Informasi Kontak</h2>
+                <h2 className="text-3xl font-bold text-white mb-6">Contact Information</h2>
                 <p className="text-gray-400 mb-8">
-                  Kami tersedia untuk menjawab pertanyaan Anda dan membantu Anda memulai dengan GambitAI.
+                  We are available to answer your questions and help you get started with GambitAI.
                 </p>
               </div>
 
@@ -168,7 +192,7 @@ export default function Contact() {
                   <div>
                     <h3 className="text-white font-semibold mb-1">Email</h3>
                     <p className="text-gray-400">support@gambitai.com</p>
-                    <p className="text-gray-500 text-sm mt-1">Respon dalam 24 jam</p>
+                    <p className="text-gray-500 text-sm mt-1">Response within 24 hours</p>
                   </div>
                 </div>
 
@@ -178,8 +202,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-white font-semibold mb-1">Live Chat</h3>
-                    <p className="text-gray-400">Tersedia di dashboard</p>
-                    <p className="text-gray-500 text-sm mt-1">Senin - Jumat, 09:00 - 18:00 WIB</p>
+                    <p className="text-gray-400">Available on dashboard</p>
+                    <p className="text-gray-500 text-sm mt-1">Monday - Friday, 09:00 - 18:00</p>
                   </div>
                 </div>
 
@@ -188,7 +212,7 @@ export default function Contact() {
                     <MapPin className="h-6 w-6 text-purple-500" />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Kantor</h3>
+                    <h3 className="text-white font-semibold mb-1">Office</h3>
                     <p className="text-gray-400">Jakarta, Indonesia</p>
                     <p className="text-gray-500 text-sm mt-1">By appointment only</p>
                   </div>
@@ -197,19 +221,19 @@ export default function Contact() {
 
               {/* Business Hours */}
               <div className="bg-gray-900 p-6 rounded-xl border border-gray-700">
-                <h3 className="text-white font-semibold mb-4">Jam Operasional</h3>
+                <h3 className="text-white font-semibold mb-4">Operating Hours</h3>
                 <div className="space-y-2 text-gray-400">
                   <div className="flex justify-between">
-                    <span>Senin - Jumat</span>
-                    <span className="text-white">09:00 - 18:00 WIB</span>
+                    <span>Monday - Friday</span>
+                    <span className="text-white">09:00 - 18:00</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Sabtu</span>
-                    <span className="text-white">10:00 - 15:00 WIB</span>
+                    <span>Saturday</span>
+                    <span className="text-white">10:00 - 15:00</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Minggu</span>
-                    <span className="text-gray-500">Tutup</span>
+                    <span>Sunday</span>
+                    <span className="text-gray-500">Closed</span>
                   </div>
                 </div>
               </div>
@@ -218,13 +242,13 @@ export default function Contact() {
               <div className="bg-gradient-to-br from-emerald-500/10 to-blue-500/10 p-6 rounded-xl border border-emerald-500/30">
                 <h3 className="text-white font-semibold mb-2">Enterprise Solutions</h3>
                 <p className="text-gray-400 mb-4">
-                  Butuh solusi custom atau integrasi khusus? Tim sales kami siap membantu.
+                  Need custom solutions or special integrations? Our sales team is ready to help.
                 </p>
                 <Link
                   to="/pricing"
                   className="inline-block px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold text-sm"
                 >
-                  Lihat Paket Enterprise
+                  View Enterprise Plans
                 </Link>
               </div>
             </div>
@@ -237,35 +261,35 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">
-              Pertanyaan Umum
+              General Question
             </h2>
             <p className="text-gray-400">
-              Mungkin jawaban Anda sudah ada di sini
+              Maybe your answer is already here
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <div className="bg-gray-900 p-6 rounded-xl border border-gray-700">
-              <h3 className="text-white font-semibold mb-2">Bagaimana cara memulai?</h3>
+              <h3 className="text-white font-semibold mb-2">How do I get started?</h3>
               <p className="text-gray-400 text-sm">
-                Daftar gratis, atur preferensi alert, dan mulai terima notifikasi peluang arbitrase.
+                Sign up for free, set your alert preferences, and start receiving arbitrage opportunity notifications.
               </p>
             </div>
             <div className="bg-gray-900 p-6 rounded-xl border border-gray-700">
-              <h3 className="text-white font-semibold mb-2">Apakah ada trial period?</h3>
+              <h3 className="text-white font-semibold mb-2">Is there a trial period?</h3>
               <p className="text-gray-400 text-sm">
-                Paket Free tersedia selamanya. Tidak perlu kartu kredit untuk memulai.
+                The Free plan is available forever. No credit card required to get started.
               </p>
             </div>
             <div className="bg-gray-900 p-6 rounded-xl border border-gray-700">
-              <h3 className="text-white font-semibold mb-2">Platform apa yang didukung?</h3>
+              <h3 className="text-white font-semibold mb-2">Which platforms are supported?</h3>
               <p className="text-gray-400 text-sm">
-                Saat ini kami mendukung Polymarket dan Kalshi dengan rencana ekspansi ke platform lain.
+                We currently support Polymarket and Kalshi with plans to expand to other platforms.
               </p>
             </div>
             <div className="bg-gray-900 p-6 rounded-xl border border-gray-700">
-              <h3 className="text-white font-semibold mb-2">Bagaimana dengan keamanan data?</h3>
+              <h3 className="text-white font-semibold mb-2">What about data security?</h3>
               <p className="text-gray-400 text-sm">
-                Semua data dienkripsi end-to-end dan disimpan di server yang aman dengan backup rutin.
+                All data is encrypted end-to-end and stored on secure servers with routine backups.
               </p>
             </div>
           </div>
@@ -282,22 +306,22 @@ export default function Contact() {
                 <span className="text-xl font-bold text-white">GambitAI</span>
               </div>
               <p className="text-gray-400 text-sm">
-                Platform deteksi arbitrase berbasis AI untuk trader prediction market.
+                AI-powered arbitrage detection platform for prediction market traders.
               </p>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-4">Produk</h4>
+              <h4 className="text-white font-semibold mb-4">Product</h4>
               <ul className="space-y-2">
                 <li><Link to="/login" className="text-gray-400 hover:text-white text-sm">Dashboard</Link></li>
-                <li><Link to="/pricing" className="text-gray-400 hover:text-white text-sm">Harga</Link></li>
-                <li><Link to="/signup" className="text-gray-400 hover:text-white text-sm">Daftar</Link></li>
+                <li><Link to="/pricing" className="text-gray-400 hover:text-white text-sm">Pricing</Link></li>
+                <li><Link to="/signup" className="text-gray-400 hover:text-white text-sm">Sign Up</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-4">Perusahaan</h4>
+              <h4 className="text-white font-semibold mb-4">Company</h4>
               <ul className="space-y-2">
-                <li><Link to="/about" className="text-gray-400 hover:text-white text-sm">Tentang Kami</Link></li>
-                <li><Link to="/contact" className="text-gray-400 hover:text-white text-sm">Kontak</Link></li>
+                <li><Link to="/about" className="text-gray-400 hover:text-white text-sm">About Us</Link></li>
+                <li><Link to="/contact" className="text-gray-400 hover:text-white text-sm">Contact</Link></li>
               </ul>
             </div>
             <div>
@@ -309,7 +333,7 @@ export default function Contact() {
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-            © 2025 GambitAI. Semua hak dilindungi undang-undang.
+            © 2025 GambitAI. All rights reserved.
           </div>
         </div>
       </footer>

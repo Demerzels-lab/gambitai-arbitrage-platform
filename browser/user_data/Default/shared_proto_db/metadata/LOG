@@ -1,3 +1,3 @@
-2025/11/17-13:33:37.207 4ea Reusing MANIFEST /workspace/browser/user_data/Default/shared_proto_db/metadata/MANIFEST-000001
-2025/11/17-13:33:37.211 4ea Recovering log #3
-2025/11/17-13:33:37.215 4ea Reusing old log /workspace/browser/user_data/Default/shared_proto_db/metadata/000003.log 
+2025/11/17-15:41:54.308 367 Reusing MANIFEST /workspace/browser/user_data/Default/shared_proto_db/metadata/MANIFEST-000001
+2025/11/17-15:41:54.312 367 Recovering log #3
+2025/11/17-15:41:54.316 367 Reusing old log /workspace/browser/user_data/Default/shared_proto_db/metadata/000003.log 

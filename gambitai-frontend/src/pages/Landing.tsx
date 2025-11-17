@@ -13,20 +13,20 @@ export default function Landing() {
               <span className="text-2xl font-bold text-white">GambitAI</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="/about" className="text-gray-300 hover:text-white transition-colors">Tentang</Link>
-              <Link to="/pricing" className="text-gray-300 hover:text-white transition-colors">Harga</Link>
-              <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Kontak</Link>
-              <Link to="/login" className="text-gray-300 hover:text-white transition-colors">Masuk</Link>
+              <Link to="/about" className="text-gray-300 hover:text-white transition-colors">About</Link>
+              <Link to="/pricing" className="text-gray-300 hover:text-white transition-colors">Pricing</Link>
+              <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link>
+              <Link to="/login" className="text-gray-300 hover:text-white transition-colors">Sign In</Link>
               <Link 
                 to="/signup" 
                 className="px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold"
               >
-                Mulai Gratis
+                Get Started
               </Link>
             </div>
             <div className="md:hidden">
               <Link to="/signup" className="px-4 py-2 bg-emerald-600 text-white rounded-lg text-sm font-semibold">
-                Mulai
+                Start
               </Link>
             </div>
           </div>
@@ -38,32 +38,32 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              Deteksi Peluang Arbitrase
+              Detect Arbitrage Opportunities
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">
-                Secara Real-Time
+                In Real-Time
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Platform berbasis AI yang mendeteksi peluang arbitrase antara Polymarket dan Kalshi. 
-              Dapatkan profit risk-free dengan notifikasi instan dan analisis data real-time.
+              AI-powered platform that detects arbitrage opportunities between Polymarket and Kalshi. 
+              Get risk-free profits with instant notifications and real-time data analysis.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link 
                 to="/signup"
                 className="px-8 py-4 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-all font-semibold text-lg flex items-center gap-2 shadow-lg hover:shadow-emerald-500/50"
               >
-                Mulai Gratis Sekarang
+                Get Started Free
                 <ArrowRight className="h-5 w-5" />
               </Link>
               <Link 
                 to="/login"
                 className="px-8 py-4 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors font-semibold text-lg border border-gray-700"
               >
-                Lihat Demo
+                View Demo
               </Link>
             </div>
             <p className="mt-6 text-gray-400 text-sm">
-              Tidak perlu kartu kredit. Mulai dalam 30 detik.
+              No credit card required. Get started in 30 seconds.
             </p>
           </div>
 
@@ -71,19 +71,19 @@ export default function Landing() {
           <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="text-4xl font-bold text-emerald-500 mb-2">1,000+</div>
-              <div className="text-gray-400">Peluang Terdeteksi</div>
+              <div className="text-gray-400">Opportunities Detected</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-blue-500 mb-2">24/7</div>
-              <div className="text-gray-400">Monitoring Real-Time</div>
+              <div className="text-gray-400">Real-Time Monitoring</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-purple-500 mb-2">95%</div>
-              <div className="text-gray-400">Akurasi Deteksi</div>
+              <div className="text-gray-400">Detection Accuracy</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-orange-500 mb-2">&lt;1s</div>
-              <div className="text-gray-400">Notifikasi Instan</div>
+              <div className="text-gray-400">Instant Notifications</div>
             </div>
           </div>
         </div>
@@ -94,10 +94,10 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Fitur Unggulan
+              Key Features
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Semua yang Anda butuhkan untuk mengidentifikasi dan memanfaatkan peluang arbitrase
+              Everything you need to identify and capitalize on arbitrage opportunities
             </p>
           </div>
 
@@ -106,9 +106,9 @@ export default function Landing() {
               <div className="h-12 w-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
                 <Zap className="h-6 w-6 text-emerald-500" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Deteksi Real-Time</h3>
+              <h3 className="text-xl font-bold text-white mb-2">Real-Time Detection</h3>
               <p className="text-gray-400">
-                Sistem monitoring 24/7 yang mendeteksi peluang arbitrase dalam hitungan detik
+                24/7 monitoring system that detects arbitrage opportunities in seconds
               </p>
             </div>
 
@@ -116,9 +116,9 @@ export default function Landing() {
               <div className="h-12 w-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
                 <Bell className="h-6 w-6 text-blue-500" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Notifikasi Telegram</h3>
+              <h3 className="text-xl font-bold text-white mb-2">Telegram Notifications</h3>
               <p className="text-gray-400">
-                Dapatkan alert instan melalui Telegram untuk setiap peluang arbitrase baru
+                Get instant alerts via Telegram for every new arbitrage opportunity
               </p>
             </div>
 
@@ -126,9 +126,9 @@ export default function Landing() {
               <div className="h-12 w-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
                 <BarChart3 className="h-6 w-6 text-purple-500" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Analisis Mendalam</h3>
+              <h3 className="text-xl font-bold text-white mb-2">Deep Analytics</h3>
               <p className="text-gray-400">
-                Dashboard analitik lengkap dengan data historis dan tren pasar
+                Complete analytics dashboard with historical data and market trends
               </p>
             </div>
 
@@ -136,9 +136,9 @@ export default function Landing() {
               <div className="h-12 w-12 bg-orange-500/10 rounded-lg flex items-center justify-center mb-4">
                 <Calculator className="h-6 w-6 text-orange-500" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Kalkulator Profit</h3>
+              <h3 className="text-xl font-bold text-white mb-2">Profit Calculator</h3>
               <p className="text-gray-400">
-                Hitung potensi profit Anda dengan kalkulator arbitrase yang akurat
+                Calculate your potential profits with our accurate arbitrage calculator
               </p>
             </div>
 
@@ -148,7 +148,7 @@ export default function Landing() {
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Risk-Free Trading</h3>
               <p className="text-gray-400">
-                Arbitrase adalah strategi trading tanpa risiko dengan profit terjamin
+                Arbitrage is a risk-free trading strategy with guaranteed profits
               </p>
             </div>
 
@@ -158,7 +158,7 @@ export default function Landing() {
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Multi-Market</h3>
               <p className="text-gray-400">
-                Monitoring simultan di Polymarket dan Kalshi untuk peluang maksimal
+                Simultaneous monitoring across Polymarket and Kalshi for maximum opportunities
               </p>
             </div>
           </div>
@@ -170,10 +170,10 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Cara Kerja
+              How It Works
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Tiga langkah sederhana untuk mulai mendapatkan profit dari arbitrase
+              Three simple steps to start earning profits from arbitrage
             </p>
           </div>
 
@@ -182,9 +182,9 @@ export default function Landing() {
               <div className="h-16 w-16 bg-emerald-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
                 1
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Daftar Gratis</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Sign Up Free</h3>
               <p className="text-gray-400">
-                Buat akun dalam 30 detik. Tidak perlu kartu kredit atau biaya tersembunyi.
+                Create an account in 30 seconds. No credit card or hidden fees required.
               </p>
             </div>
 
@@ -192,9 +192,9 @@ export default function Landing() {
               <div className="h-16 w-16 bg-blue-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
                 2
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Atur Preferensi</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Set Preferences</h3>
               <p className="text-gray-400">
-                Konfigurasi alert Telegram dan tentukan threshold profit minimum Anda.
+                Configure Telegram alerts and set your minimum profit threshold.
               </p>
             </div>
 
@@ -202,9 +202,9 @@ export default function Landing() {
               <div className="h-16 w-16 bg-purple-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
                 3
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Ambil Aksi</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Take Action</h3>
               <p className="text-gray-400">
-                Terima notifikasi real-time dan eksekusi trade untuk mendapatkan profit risk-free.
+                Receive real-time notifications and execute trades to earn risk-free profits.
               </p>
             </div>
           </div>
@@ -216,10 +216,10 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Harga Transparan
+              Transparent Pricing
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Pilih paket yang sesuai dengan kebutuhan trading Anda
+              Choose the plan that fits your trading needs
             </p>
           </div>
 
@@ -228,21 +228,21 @@ export default function Landing() {
             <div className="bg-gray-900 p-8 rounded-xl border border-gray-700">
               <h3 className="text-2xl font-bold text-white mb-2">Free</h3>
               <div className="mb-6">
-                <span className="text-4xl font-bold text-white">Rp 0</span>
-                <span className="text-gray-400">/bulan</span>
+                <span className="text-4xl font-bold text-white">$0</span>
+                <span className="text-gray-400">/month</span>
               </div>
               <ul className="space-y-4 mb-8">
                 <li className="text-gray-300 flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  10 alert per hari
+                  10 alerts per day
                 </li>
                 <li className="text-gray-300 flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  Akses dashboard basic
+                  Basic dashboard access
                 </li>
                 <li className="text-gray-300 flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  Data historis 7 hari
+                  7-day historical data
                 </li>
                 <li className="text-gray-300 flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
@@ -253,36 +253,36 @@ export default function Landing() {
                 to="/signup"
                 className="block w-full px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors text-center font-semibold border border-gray-700"
               >
-                Mulai Gratis
+                Start Free
               </Link>
             </div>
 
             {/* Pro */}
             <div className="bg-gradient-to-b from-emerald-900/50 to-gray-900 p-8 rounded-xl border-2 border-emerald-500 relative">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-emerald-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                POPULER
+                POPULAR
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">Pro</h3>
               <div className="mb-6">
-                <span className="text-4xl font-bold text-white">Rp 299K</span>
-                <span className="text-gray-400">/bulan</span>
+                <span className="text-4xl font-bold text-white">$49</span>
+                <span className="text-gray-400">/month</span>
               </div>
               <ul className="space-y-4 mb-8">
                 <li className="text-gray-300 flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  Alert unlimited
+                  Unlimited alerts
                 </li>
                 <li className="text-gray-300 flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  Dashboard lengkap + analitik
+                  Full dashboard + analytics
                 </li>
                 <li className="text-gray-300 flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  Data historis 90 hari
+                  90-day historical data
                 </li>
                 <li className="text-gray-300 flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  Telegram bot premium
+                  Premium Telegram bot
                 </li>
                 <li className="text-gray-300 flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
@@ -293,7 +293,7 @@ export default function Landing() {
                 to="/signup"
                 className="block w-full px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors text-center font-semibold"
               >
-                Mulai Pro
+                Start Pro
               </Link>
             </div>
 
@@ -306,7 +306,7 @@ export default function Landing() {
               <ul className="space-y-4 mb-8">
                 <li className="text-gray-300 flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  Semua fitur Pro
+                  All Pro features
                 </li>
                 <li className="text-gray-300 flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
@@ -314,7 +314,7 @@ export default function Landing() {
                 </li>
                 <li className="text-gray-300 flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  Data historis unlimited
+                  Unlimited historical data
                 </li>
                 <li className="text-gray-300 flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
@@ -329,7 +329,7 @@ export default function Landing() {
                 to="/contact"
                 className="block w-full px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors text-center font-semibold border border-gray-700"
               >
-                Hubungi Kami
+                Contact Us
               </Link>
             </div>
           </div>
@@ -340,16 +340,16 @@ export default function Landing() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Siap Memulai Trading Arbitrase?
+            Ready to Start Arbitrage Trading?
           </h2>
           <p className="text-xl text-gray-400 mb-8">
-            Bergabung dengan trader cerdas yang menggunakan GambitAI untuk profit konsisten
+            Join smart traders using GambitAI for consistent profits
           </p>
           <Link
             to="/signup"
             className="inline-flex items-center gap-2 px-8 py-4 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-all font-semibold text-lg shadow-lg hover:shadow-emerald-500/50"
           >
-            Mulai Gratis Sekarang
+            Get Started Free
             <ArrowRight className="h-5 w-5" />
           </Link>
         </div>
@@ -365,22 +365,22 @@ export default function Landing() {
                 <span className="text-xl font-bold text-white">GambitAI</span>
               </div>
               <p className="text-gray-400 text-sm">
-                Platform deteksi arbitrase berbasis AI untuk trader prediction market.
+                AI-powered arbitrage detection platform for prediction market traders.
               </p>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-4">Produk</h4>
+              <h4 className="text-white font-semibold mb-4">Product</h4>
               <ul className="space-y-2">
                 <li><Link to="/login" className="text-gray-400 hover:text-white text-sm">Dashboard</Link></li>
-                <li><Link to="/pricing" className="text-gray-400 hover:text-white text-sm">Harga</Link></li>
-                <li><Link to="/signup" className="text-gray-400 hover:text-white text-sm">Daftar</Link></li>
+                <li><Link to="/pricing" className="text-gray-400 hover:text-white text-sm">Pricing</Link></li>
+                <li><Link to="/signup" className="text-gray-400 hover:text-white text-sm">Sign Up</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-4">Perusahaan</h4>
+              <h4 className="text-white font-semibold mb-4">Company</h4>
               <ul className="space-y-2">
-                <li><Link to="/about" className="text-gray-400 hover:text-white text-sm">Tentang Kami</Link></li>
-                <li><Link to="/contact" className="text-gray-400 hover:text-white text-sm">Kontak</Link></li>
+                <li><Link to="/about" className="text-gray-400 hover:text-white text-sm">About Us</Link></li>
+                <li><Link to="/contact" className="text-gray-400 hover:text-white text-sm">Contact</Link></li>
               </ul>
             </div>
             <div>
@@ -392,7 +392,7 @@ export default function Landing() {
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-            © 2025 GambitAI. Semua hak dilindungi undang-undang.
+            © 2025 GambitAI. All rights reserved.
           </div>
         </div>
       </footer>

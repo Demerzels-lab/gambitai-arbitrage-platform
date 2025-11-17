@@ -24,16 +24,22 @@ export default function Settings() {
         data: { user },
       } = await supabase.auth.getUser();
 
-      if (!user) return;
+      if (!user) {
+        setLoading(false);
+        return;
+      }
 
+      // Using maybeSingle() instead of single() to avoid HTTP 406 errors
+      // maybeSingle() returns null if no rows found, without throwing error
       const { data, error } = await supabase
         .from('user_alert_preferences')
         .select('*')
         .eq('user_id', user.id)
-        .single();
+        .maybeSingle();
 
-      if (error && error.code !== 'PGRST116') {
-        throw error;
+      if (error) {
+        console.error('Error fetching preferences:', error);
+        // Don't throw, just log and continue with default values
       }
 
       if (data) {

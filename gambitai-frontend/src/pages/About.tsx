@@ -13,15 +13,15 @@ export default function About() {
               <span className="text-2xl font-bold text-white">GambitAI</span>
             </Link>
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="/" className="text-gray-300 hover:text-white transition-colors">Beranda</Link>
-              <Link to="/pricing" className="text-gray-300 hover:text-white transition-colors">Harga</Link>
-              <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Kontak</Link>
-              <Link to="/login" className="text-gray-300 hover:text-white transition-colors">Masuk</Link>
+              <Link to="/" className="text-gray-300 hover:text-white transition-colors">Home</Link>
+              <Link to="/pricing" className="text-gray-300 hover:text-white transition-colors">Pricing</Link>
+              <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link>
+              <Link to="/login" className="text-gray-300 hover:text-white transition-colors">Sign In</Link>
               <Link 
                 to="/signup" 
                 className="px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold"
               >
-                Mulai Gratis
+                Get Started
               </Link>
             </div>
           </div>
@@ -32,10 +32,10 @@ export default function About() {
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Tentang GambitAI
+            About GambitAI
           </h1>
           <p className="text-xl text-gray-300">
-            Platform deteksi arbitrase berbasis AI yang membantu trader menemukan peluang profit risk-free di prediction market
+            AI-powered arbitrage detection platform that helps traders find risk-free profit opportunities in prediction markets
           </p>
         </div>
       </section>
@@ -45,25 +45,25 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-white mb-6">Misi Kami</h2>
+              <h2 className="text-4xl font-bold text-white mb-6">Our Mission</h2>
               <p className="text-gray-300 text-lg mb-4">
-                GambitAI didirikan dengan misi untuk mendemokratisasi akses ke strategi trading arbitrase yang sebelumnya hanya tersedia untuk institusi dan trader profesional.
+                GambitAI was founded with a mission to democratize access to arbitrage trading strategies previously available only to institutions and professional traders.
               </p>
               <p className="text-gray-300 text-lg mb-4">
-                Kami percaya bahwa setiap trader, terlepas dari level pengalaman mereka, berhak mendapatkan akses ke tools dan data berkualitas tinggi untuk membuat keputusan trading yang lebih baik.
+                We believe that every trader, regardless of their experience level, deserves access to high-quality tools and data to make better trading decisions.
               </p>
               <p className="text-gray-300 text-lg">
-                Dengan memanfaatkan teknologi AI dan monitoring real-time, kami membantu trader mengidentifikasi dan mengeksekusi peluang arbitrase dengan cepat dan efisien.
+                By leveraging AI technology and real-time monitoring, we help traders identify and execute arbitrage opportunities quickly and efficiently.
               </p>
             </div>
             <div className="bg-gradient-to-br from-emerald-500/20 to-blue-500/20 p-12 rounded-2xl border border-emerald-500/30">
               <div className="text-center">
                 <div className="text-6xl font-bold text-emerald-500 mb-2">1,000+</div>
-                <div className="text-gray-300 text-lg mb-8">Peluang Arbitrase Terdeteksi</div>
+                <div className="text-gray-300 text-lg mb-8">Arbitrage Opportunities Detected</div>
                 <div className="text-6xl font-bold text-blue-500 mb-2">24/7</div>
-                <div className="text-gray-300 text-lg mb-8">Monitoring Tanpa Henti</div>
+                <div className="text-gray-300 text-lg mb-8">Non-Stop Monitoring</div>
                 <div className="text-6xl font-bold text-purple-500 mb-2">95%</div>
-                <div className="text-gray-300 text-lg">Tingkat Akurasi</div>
+                <div className="text-gray-300 text-lg">Accuracy Rate</div>
               </div>
             </div>
           </div>
@@ -74,35 +74,35 @@ export default function About() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-800/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Nilai-Nilai Kami</h2>
-            <p className="text-xl text-gray-400">Prinsip yang memandu setiap keputusan kami</p>
+            <h2 className="text-4xl font-bold text-white mb-4">Our Values</h2>
+            <p className="text-xl text-gray-400">Principles that guide every decision we make</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-gray-900 p-8 rounded-xl border border-gray-700">
               <div className="h-12 w-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
                 <Target className="h-6 w-6 text-emerald-500" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Akurasi</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Accuracy</h3>
               <p className="text-gray-400">
-                Kami berkomitmen untuk memberikan data dan analisis yang akurat dan dapat diandalkan untuk setiap keputusan trading Anda.
+                We are committed to providing accurate and reliable data and analysis for every trading decision you make.
               </p>
             </div>
             <div className="bg-gray-900 p-8 rounded-xl border border-gray-700">
               <div className="h-12 w-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
                 <Zap className="h-6 w-6 text-blue-500" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Kecepatan</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Speed</h3>
               <p className="text-gray-400">
-                Peluang arbitrase muncul dan hilang dalam hitungan detik. Sistem kami memastikan Anda selalu selangkah lebih cepat.
+                Arbitrage opportunities appear and disappear in seconds. Our system ensures you're always one step ahead.
               </p>
             </div>
             <div className="bg-gray-900 p-8 rounded-xl border border-gray-700">
               <div className="h-12 w-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
                 <Users className="h-6 w-6 text-purple-500" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Transparansi</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Transparency</h3>
               <p className="text-gray-400">
-                Kami percaya pada transparansi total dalam metodologi deteksi dan perhitungan profit kami.
+                We believe in complete transparency in our detection methodology and profit calculations.
               </p>
             </div>
           </div>
@@ -113,14 +113,14 @@ export default function About() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Teknologi Kami</h2>
-            <p className="text-xl text-gray-400">Infrastruktur canggih untuk deteksi arbitrase real-time</p>
+            <h2 className="text-4xl font-bold text-white mb-4">Our Technology</h2>
+            <p className="text-xl text-gray-400">Advanced infrastructure for real-time arbitrage detection</p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gray-900 p-8 rounded-xl border border-gray-700">
               <h3 className="text-2xl font-bold text-white mb-4">Real-Time Data Processing</h3>
               <p className="text-gray-400 mb-4">
-                Sistem kami memproses data dari multiple sources secara simultan menggunakan WebSocket connections untuk memastikan tidak ada peluang yang terlewat.
+                Our system processes data from multiple sources simultaneously using WebSocket connections to ensure no opportunity is missed.
               </p>
               <ul className="space-y-2 text-gray-300">
                 <li className="flex items-start">
@@ -140,7 +140,7 @@ export default function About() {
             <div className="bg-gray-900 p-8 rounded-xl border border-gray-700">
               <h3 className="text-2xl font-bold text-white mb-4">AI-Powered Detection</h3>
               <p className="text-gray-400 mb-4">
-                Algoritma machine learning kami menganalisis pola pasar dan mengidentifikasi peluang arbitrase dengan tingkat akurasi tinggi.
+                Our machine learning algorithms analyze market patterns and identify arbitrage opportunities with high accuracy.
               </p>
               <ul className="space-y-2 text-gray-300">
                 <li className="flex items-start">
@@ -165,16 +165,16 @@ export default function About() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-800/50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Bergabunglah Dengan Kami
+            Join Us
           </h2>
           <p className="text-xl text-gray-400 mb-8">
-            Mulai journey Anda dalam arbitrage trading hari ini
+            Start your arbitrage trading journey today
           </p>
           <Link
             to="/signup"
             className="inline-block px-8 py-4 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold text-lg"
           >
-            Mulai Gratis Sekarang
+            Get Started Free
           </Link>
         </div>
       </section>
@@ -189,22 +189,22 @@ export default function About() {
                 <span className="text-xl font-bold text-white">GambitAI</span>
               </div>
               <p className="text-gray-400 text-sm">
-                Platform deteksi arbitrase berbasis AI untuk trader prediction market.
+                AI-powered arbitrage detection platform for prediction market traders.
               </p>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-4">Produk</h4>
+              <h4 className="text-white font-semibold mb-4">Product</h4>
               <ul className="space-y-2">
                 <li><Link to="/login" className="text-gray-400 hover:text-white text-sm">Dashboard</Link></li>
-                <li><Link to="/pricing" className="text-gray-400 hover:text-white text-sm">Harga</Link></li>
-                <li><Link to="/signup" className="text-gray-400 hover:text-white text-sm">Daftar</Link></li>
+                <li><Link to="/pricing" className="text-gray-400 hover:text-white text-sm">Pricing</Link></li>
+                <li><Link to="/signup" className="text-gray-400 hover:text-white text-sm">Sign Up</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-4">Perusahaan</h4>
+              <h4 className="text-white font-semibold mb-4">Company</h4>
               <ul className="space-y-2">
-                <li><Link to="/about" className="text-gray-400 hover:text-white text-sm">Tentang Kami</Link></li>
-                <li><Link to="/contact" className="text-gray-400 hover:text-white text-sm">Kontak</Link></li>
+                <li><Link to="/about" className="text-gray-400 hover:text-white text-sm">About Us</Link></li>
+                <li><Link to="/contact" className="text-gray-400 hover:text-white text-sm">Contact</Link></li>
               </ul>
             </div>
             <div>
@@ -216,7 +216,7 @@ export default function About() {
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-            © 2025 GambitAI. Semua hak dilindungi undang-undang.
+            © 2025 GambitAI. All rights reserved.
           </div>
         </div>
       </footer>

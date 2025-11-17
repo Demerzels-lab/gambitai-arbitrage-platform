@@ -1,43 +1,100 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Calculator as CalcIcon, DollarSign, TrendingUp, AlertCircle } from 'lucide-react';
 
 export default function Calculator() {
-  const [polymarketPrice, setPolymarketPrice] = useState('');
-  const [kalshiPrice, setKalshiPrice] = useState('');
-  const [betAmount, setBetAmount] = useState('');
+  const location = useLocation();
+  const state = location.state as { polymarketPrice?: number; kalshiPrice?: number; betAmount?: number } || {};
+  
+  const [polymarketPrice, setPolymarketPrice] = useState(state.polymarketPrice?.toString() || '');
+  const [kalshiPrice, setKalshiPrice] = useState(state.kalshiPrice?.toString() || '');
+  const [betAmount, setBetAmount] = useState(state.betAmount?.toString() || '');
   const [result, setResult] = useState<any>(null);
+
+  useEffect(() => {
+    // Auto-calculate if all fields are pre-filled from navigation state
+    if (state.polymarketPrice && state.kalshiPrice && state.betAmount) {
+      console.log('Auto-calculating with pre-filled values:', state);
+      // Use timeout to ensure state is updated
+      setTimeout(() => {
+        const poly = state.polymarketPrice || 0;
+        const kalshi = state.kalshiPrice || 0;
+        const amount = state.betAmount || 0;
+        
+        if (poly > 0 && kalshi > 0 && amount > 0) {
+          performCalculation(poly, kalshi, amount);
+        }
+      }, 100);
+    }
+  }, []);
+
+  const performCalculation = (poly: number, kalshi: number, amount: number) => {
+    console.log('Performing calculation with:', { poly, kalshi, amount });
+    
+    // Basic validation
+    if (poly <= 0 || kalshi <= 0 || amount <= 0) {
+      console.error('Invalid input values');
+      return;
+    }
+
+    // Calculate spread and arbitrage metrics
+    const spread = Math.abs(poly - kalshi);
+    const spreadPercentage = (spread / Math.min(poly, kalshi)) * 100;
+    
+    // Improved profit calculation
+    // If we buy at lower price and sell at higher price
+    const buyPrice = Math.min(poly, kalshi);
+    const sellPrice = Math.max(poly, kalshi);
+    
+    // Expected profit based on the spread and bet amount
+    // Profit = (Sell Price - Buy Price) * Number of contracts
+    // Number of contracts = Bet Amount / Buy Price
+    const numContracts = amount / buyPrice;
+    const grossProfit = numContracts * (sellPrice - buyPrice);
+    const profitPercentage = (grossProfit / amount) * 100;
+
+    const buyPlatform = poly < kalshi ? 'Polymarket' : 'Kalshi';
+    const sellPlatform = poly < kalshi ? 'Kalshi' : 'Polymarket';
+
+    const calculatedResult = {
+      spread: spreadPercentage,
+      arbitragePercentage: spreadPercentage,
+      profitPercentage,
+      expectedProfit: grossProfit,
+      buyPlatform,
+      sellPlatform,
+      buyPrice,
+      sellPrice,
+      hasOpportunity: spreadPercentage > 5, // 5% minimum spread
+    };
+
+    console.log('Calculation result:', calculatedResult);
+    setResult(calculatedResult);
+  };
 
   const calculateArbitrage = () => {
     const poly = parseFloat(polymarketPrice);
     const kalshi = parseFloat(kalshiPrice);
     const amount = parseFloat(betAmount);
 
-    if (!poly || !kalshi || !amount) {
-      alert('Please fill in all fields');
+    console.log('Calculate button clicked with:', { poly, kalshi, amount });
+
+    if (!poly || !kalshi || !amount || isNaN(poly) || isNaN(kalshi) || isNaN(amount)) {
+      alert('Please fill in all fields with valid numbers');
       return;
     }
 
-    const spread = Math.abs(poly - kalshi);
-    const arbitragePercentage = (spread / Math.min(poly, kalshi)) * 100;
-    const profitPercentage = (spread / (poly + kalshi)) * 100;
-    const expectedProfit = amount * (spread / (1 - Math.min(poly, kalshi)));
+    if (poly <= 0 || poly > 1 || kalshi <= 0 || kalshi > 1) {
+      alert('Prices must be between 0 and 1');
+      return;
+    }
 
-    const buyPlatform = poly < kalshi ? 'Polymarket' : 'Kalshi';
-    const sellPlatform = poly < kalshi ? 'Kalshi' : 'Polymarket';
-    const buyPrice = Math.min(poly, kalshi);
-    const sellPrice = Math.max(poly, kalshi);
+    if (amount <= 0) {
+      alert('Bet amount must be greater than 0');
+      return;
+    }
 
-    setResult({
-      spread,
-      arbitragePercentage,
-      profitPercentage,
-      expectedProfit,
-      buyPlatform,
-      sellPlatform,
-      buyPrice,
-      sellPrice,
-      hasOpportunity: spread > 0.05, // 5% minimum spread
-    });
+    performCalculation(poly, kalshi, amount);
   };
 
   return (
@@ -143,9 +200,9 @@ export default function Calculator() {
 
               <div className="space-y-4">
                 <div className="p-4 bg-gray-900/50 rounded-lg">
-                  <div className="text-gray-400 text-sm mb-1">Spread</div>
+                  <div className="text-gray-400 text-sm mb-1">Spread Percentage</div>
                   <div className="text-2xl font-bold text-yellow-400">
-                    {(result.spread * 100).toFixed(2)}%
+                    {result.spread.toFixed(2)}%
                   </div>
                 </div>
 
@@ -173,7 +230,7 @@ export default function Calculator() {
                     </div>
                     <div className="flex items-center justify-between p-3 bg-blue-500/10 rounded">
                       <span className="text-gray-300">Buy Price</span>
-                      <span className="text-white font-semibold">${result.buyPrice.toFixed(4)}</span>
+                      <span className="text-white font-semibold">{result.buyPrice.toFixed(4)}</span>
                     </div>
                     <div className="flex items-center justify-between p-3 bg-purple-500/10 rounded">
                       <span className="text-gray-300">Sell on</span>
@@ -181,7 +238,7 @@ export default function Calculator() {
                     </div>
                     <div className="flex items-center justify-between p-3 bg-purple-500/10 rounded">
                       <span className="text-gray-300">Sell Price</span>
-                      <span className="text-white font-semibold">${result.sellPrice.toFixed(4)}</span>
+                      <span className="text-white font-semibold">{result.sellPrice.toFixed(4)}</span>
                     </div>
                   </div>
                 </div>

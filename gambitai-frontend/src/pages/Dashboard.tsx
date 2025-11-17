@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { supabase, ArbitrageOpportunity } from '../lib/supabase';
-import { TrendingUp, TrendingDown, AlertCircle, CheckCircle, Clock, DollarSign } from 'lucide-react';
+import { TrendingUp, TrendingDown, AlertCircle, CheckCircle, Clock, DollarSign, ChevronDown, ChevronUp, ExternalLink, Calculator } from 'lucide-react';
 
 export default function Dashboard() {
+  const navigate = useNavigate();
   const [opportunities, setOpportunities] = useState<ArbitrageOpportunity[]>([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<'all' | 'crypto' | 'politics'>('all');
+  const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     fetchOpportunities();
@@ -88,6 +91,28 @@ export default function Dashboard() {
       : '0',
     highConfidence: opportunities.filter((opp) => opp.confidence_level === 'high').length,
     totalExpectedProfit: opportunities.reduce((sum, opp) => sum + opp.expected_profit, 0),
+  };
+
+  const toggleCard = (id: string) => {
+    setExpandedCards(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(id)) {
+        newSet.delete(id);
+      } else {
+        newSet.add(id);
+      }
+      return newSet;
+    });
+  };
+
+  const handleCalculate = (opp: ArbitrageOpportunity) => {
+    navigate('/calculator', { 
+      state: { 
+        polymarketPrice: opp.polymarket_price, 
+        kalshiPrice: opp.kalshi_price,
+        betAmount: opp.optimal_bet_amount 
+      } 
+    });
   };
 
   if (loading) {
@@ -184,69 +209,106 @@ export default function Dashboard() {
         </div>
       ) : (
         <div className="space-y-4">
-          {opportunities.map((opportunity) => (
-            <div
-              key={opportunity.id}
-              className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all"
-            >
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex-1">
-                  <div className="flex items-center space-x-3 mb-2">
-                    <h3 className="text-lg font-semibold text-white">{opportunity.event_name}</h3>
-                    <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs font-medium rounded border border-blue-500/50 uppercase">
-                      {opportunity.category}
+          {opportunities.map((opportunity) => {
+            const isExpanded = expandedCards.has(opportunity.id);
+            return (
+              <div
+                key={opportunity.id}
+                className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all cursor-pointer hover:shadow-lg hover:shadow-blue-500/10"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <h3 className="text-lg font-semibold text-white">{opportunity.event_name}</h3>
+                      <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs font-medium rounded border border-blue-500/50 uppercase">
+                        {opportunity.category}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className={`px-3 py-1 text-xs font-medium rounded border ${getConfidenceBadgeColor(opportunity.confidence_level)}`}>
+                      {opportunity.confidence_level.toUpperCase()}
+                    </span>
+                    <span className={`px-3 py-1 text-xs font-medium rounded border ${getRiskBadgeColor(opportunity.risk_assessment)}`}>
+                      Risk: {opportunity.risk_assessment.toUpperCase()}
                     </span>
                   </div>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <span className={`px-3 py-1 text-xs font-medium rounded border ${getConfidenceBadgeColor(opportunity.confidence_level)}`}>
-                    {opportunity.confidence_level.toUpperCase()}
-                  </span>
-                  <span className={`px-3 py-1 text-xs font-medium rounded border ${getRiskBadgeColor(opportunity.risk_assessment)}`}>
-                    Risk: {opportunity.risk_assessment.toUpperCase()}
-                  </span>
-                </div>
-              </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-                <div>
-                  <div className="text-gray-400 text-sm mb-1">Polymarket</div>
-                  <div className="text-white font-semibold">${opportunity.polymarket_price.toFixed(4)}</div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                  <div>
+                    <div className="text-gray-400 text-sm mb-1">Polymarket</div>
+                    <div className="text-white font-semibold">${opportunity.polymarket_price.toFixed(4)}</div>
+                  </div>
+                  <div>
+                    <div className="text-gray-400 text-sm mb-1">Kalshi</div>
+                    <div className="text-white font-semibold">${opportunity.kalshi_price.toFixed(4)}</div>
+                  </div>
+                  <div>
+                    <div className="text-gray-400 text-sm mb-1">Spread</div>
+                    <div className="text-yellow-400 font-semibold">{(opportunity.spread * 100).toFixed(2)}%</div>
+                  </div>
+                  <div>
+                    <div className="text-gray-400 text-sm mb-1">Profit Potential</div>
+                    <div className="text-green-400 font-semibold">{opportunity.profit_percentage.toFixed(2)}%</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-gray-400 text-sm mb-1">Kalshi</div>
-                  <div className="text-white font-semibold">${opportunity.kalshi_price.toFixed(4)}</div>
-                </div>
-                <div>
-                  <div className="text-gray-400 text-sm mb-1">Spread</div>
-                  <div className="text-yellow-400 font-semibold">{(opportunity.spread * 100).toFixed(2)}%</div>
-                </div>
-                <div>
-                  <div className="text-gray-400 text-sm mb-1">Profit Potential</div>
-                  <div className="text-green-400 font-semibold">{opportunity.profit_percentage.toFixed(2)}%</div>
-                </div>
-              </div>
 
-              <div className="flex items-center justify-between pt-4 border-t border-gray-700">
-                <div className="flex items-center space-x-6 text-sm">
-                  <div className="flex items-center space-x-2 text-gray-400">
-                    <DollarSign className="w-4 h-4" />
-                    <span>Optimal Bet: ${opportunity.optimal_bet_amount.toLocaleString()}</span>
+                {isExpanded && (
+                  <div className="mb-4 p-4 bg-gray-900/50 rounded-lg space-y-3 animate-in fade-in duration-200">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <div className="text-gray-400 text-sm mb-1">Optimal Bet Amount</div>
+                        <div className="text-white font-semibold">${opportunity.optimal_bet_amount.toLocaleString()}</div>
+                      </div>
+                      <div>
+                        <div className="text-gray-400 text-sm mb-1">Expected Profit</div>
+                        <div className="text-green-400 font-semibold">${opportunity.expected_profit.toLocaleString()}</div>
+                      </div>
+                      <div>
+                        <div className="text-gray-400 text-sm mb-1">Arbitrage Percentage</div>
+                        <div className="text-white font-semibold">{opportunity.arbitrage_percentage}%</div>
+                      </div>
+                      <div>
+                        <div className="text-gray-400 text-sm mb-1">Detected At</div>
+                        <div className="text-white font-semibold text-sm">{new Date(opportunity.detected_at).toLocaleString()}</div>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-gray-400 text-sm mb-1">Market IDs</div>
+                      <div className="text-gray-300 text-xs space-y-1">
+                        <div>Polymarket: {opportunity.polymarket_market_id}</div>
+                        <div>Kalshi: {opportunity.kalshi_market_id}</div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-2 text-gray-400">
-                    <TrendingUp className="w-4 h-4" />
-                    <span>Expected Profit: ${opportunity.expected_profit.toLocaleString()}</span>
+                )}
+
+                <div className="flex items-center justify-between pt-4 border-t border-gray-700">
+                  <div className="flex items-center space-x-3">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); handleCalculate(opportunity); }}
+                      className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors flex items-center space-x-2"
+                    >
+                      <Calculator className="w-4 h-4" />
+                      <span>Calculate</span>
+                    </button>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); toggleCard(opportunity.id); }}
+                      className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white text-sm rounded-lg transition-colors flex items-center space-x-2"
+                    >
+                      {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                      <span>{isExpanded ? 'Less' : 'More'} Details</span>
+                    </button>
                   </div>
-                  <div className="flex items-center space-x-2 text-gray-400">
+                  <div className="flex items-center space-x-2 text-gray-400 text-sm">
                     <Clock className="w-4 h-4" />
-                    <span>
-                      Detected: {new Date(opportunity.detected_at).toLocaleString()}
-                    </span>
+                    <span>{new Date(opportunity.detected_at).toLocaleTimeString()}</span>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
     </div>
