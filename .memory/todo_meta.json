@@ -1,0 +1,41 @@
+{
+  "todos": {
+    "Coordinator": {
+      "1": {
+        "id": "1",
+        "content": "Analisis requirements dan arsitektur platform arbitrage alerts",
+        "details": "Menentukan fitur utama: real-time monitoring, alert system, historical data, profit calculations, user dashboard",
+        "status": "in_progress",
+        "priority": "high"
+      },
+      "2": {
+        "id": "2",
+        "content": "Research dan integrasi API Polymarket dan Kalshi",
+        "details": "Study API documentation, rate limits, data structure, authentication requirements",
+        "status": "pending",
+        "priority": "high"
+      },
+      "3": {
+        "id": "3",
+        "content": "Design sistem monitoring dan alert real-time",
+        "details": "Architecture untuk data collection, price comparison, opportunity detection, notification system",
+        "status": "pending",
+        "priority": "high"
+      },
+      "4": {
+        "id": "4",
+        "content": "Develop full-stack web application",
+        "details": "Frontend dashboard, backend API integrations, database untuk historical data, alert notifications",
+        "status": "pending",
+        "priority": "high"
+      },
+      "5": {
+        "id": "5",
+        "content": "Testing dan deployment",
+        "details": "Test accuracy, performance, reliability; deploy ke production",
+        "status": "pending",
+        "priority": "medium"
+      }
+    }
+  }
+}
