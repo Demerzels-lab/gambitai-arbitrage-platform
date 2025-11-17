@@ -26,14 +26,14 @@
         "id": "4",
         "content": "Develop full-stack web application",
         "details": "Full-stack GambitAI app: User auth, Real-time dashboard, Markets/events display (Kalshi & Polymarket), Historical data, Telegram bot alerts, Arbitrage calculator, How it works page, Roadmap page - Full English UI - SOLID principles architecture",
-        "status": "in_progress",
+        "status": "completed",
         "priority": "high"
       },
       "5": {
         "id": "5",
         "content": "Testing dan deployment",
         "details": "Test arbitrage calculations accuracy, Telegram bot functionality, User authentication system, Markets display",
-        "status": "pending",
+        "status": "completed",
         "priority": "medium"
       }
     }
