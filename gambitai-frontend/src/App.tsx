@@ -60,8 +60,6 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/how-it-works" element={<HowItWorks />} />
-        <Route path="/roadmap" element={<Roadmap />} />
         <Route path="/login" element={!user ? <Login /> : <Navigate to="/dashboard" />} />
         <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/dashboard" />} />
 
@@ -72,6 +70,30 @@ function App() {
             user ? (
               <MainLayout user={user}>
                 <Dashboard />
+              </MainLayout>
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
+        />
+        <Route
+          path="/dashboard/how-it-works"
+          element={
+            user ? (
+              <MainLayout user={user}>
+                <HowItWorks />
+              </MainLayout>
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
+        />
+        <Route
+          path="/dashboard/roadmap"
+          element={
+            user ? (
+              <MainLayout user={user}>
+                <Roadmap />
               </MainLayout>
             ) : (
               <Navigate to="/login" />

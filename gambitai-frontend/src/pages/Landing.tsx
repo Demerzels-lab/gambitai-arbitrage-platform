@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, TrendingUp, Zap, Shield, Bell, BarChart3, Calculator } from 'lucide-react';
+import HowItWorksSection from '../components/sections/HowItWorksSection';
+import RoadmapSection from '../components/sections/RoadmapSection';
 
 export default function Landing() {
   return (
@@ -165,51 +167,11 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              How It Works
-            </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Three simple steps to start earning profits from arbitrage
-            </p>
-          </div>
+      {/* How It Works - Detailed */}
+      <HowItWorksSection showCTA={false} />
 
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="text-center">
-              <div className="h-16 w-16 bg-emerald-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                1
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Sign Up Free</h3>
-              <p className="text-gray-400">
-                Create an account in 30 seconds. No credit card or hidden fees required.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="h-16 w-16 bg-blue-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                2
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Set Preferences</h3>
-              <p className="text-gray-400">
-                Configure Telegram alerts and set your minimum profit threshold.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="h-16 w-16 bg-purple-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                3
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Take Action</h3>
-              <p className="text-gray-400">
-                Receive real-time notifications and execute trades to earn risk-free profits.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Roadmap */}
+      <RoadmapSection showFeedback={true} />
 
       {/* Pricing Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/50">

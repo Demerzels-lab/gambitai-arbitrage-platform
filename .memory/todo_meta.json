@@ -35,6 +35,13 @@
         "details": "Test arbitrage calculations accuracy, Telegram bot functionality, User authentication system, Markets display",
         "status": "completed",
         "priority": "medium"
+      },
+      "6": {
+        "id": "6",
+        "content": "Restrukturisasi konten: Pindahkan How it works dan Roadmap ke landing page",
+        "details": "1. Pindahkan section 'How it works' dari dashboard ke landing page menggantikan yang sekarang 2. Pindahkan section 'Roadmap' dari dashboard ke landing page 3. Pastikan komponen React mengikuti SOLID principles dan Single Responsibility Principle 4. Gunakan reusable component approach",
+        "status": "completed",
+        "priority": "high"
       }
     }
   }

@@ -111,3 +111,24 @@ Backend services running:
 - Telegram Bot: Need bot token from user
 - Real-time: WebSocket connections + Supabase subscriptions
 - Rate limits: Must implement proper throttling
+
+## Current Task: Restructure Landing Page (COMPLETED)
+- [DONE] Move "How It Works" from dashboard to landing page
+- [DONE] Move "Roadmap" from dashboard to landing page
+- [DONE] Create reusable components following SOLID principles
+- [DONE] New structure: Hero → Stats → Features → How It Works → Roadmap → Pricing → CTA
+- [DONE] Fix dashboard routing for How It Works and Roadmap pages
+- [DONE] Ensure sidebar navigation appears in dashboard pages
+
+### Implementation Details:
+1. Created reusable components:
+   - HowItWorksSection.tsx (Single Responsibility: Display How It Works content)
+   - RoadmapSection.tsx (Single Responsibility: Display Roadmap content)
+2. Both components accept props for customization (showCTA, showFeedback, className)
+3. Landing page uses these components for public display
+4. Dashboard pages (HowItWorks.tsx, Roadmap.tsx) reuse the same components (DRY principle)
+5. Fixed routing: /dashboard/how-it-works and /dashboard/roadmap now use MainLayout
+6. All content remains in English
+
+### Deployed URL:
+https://5kzrrwm0sj8a.space.minimax.io

@@ -22,8 +22,8 @@ export default function MainLayout({ children, user }: MainLayoutProps) {
     { path: '/markets', label: 'Markets', icon: TrendingUp },
     { path: '/analytics', label: 'Analytics', icon: BarChart3 },
     { path: '/calculator', label: 'Calculator', icon: Calculator },
-    { path: '/how-it-works', label: 'How It Works', icon: BookOpen },
-    { path: '/roadmap', label: 'Roadmap', icon: Map },
+    { path: '/dashboard/how-it-works', label: 'How It Works', icon: BookOpen },
+    { path: '/dashboard/roadmap', label: 'Roadmap', icon: Map },
     { path: '/settings', label: 'Settings', icon: Settings },
   ];
 
