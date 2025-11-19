@@ -42,6 +42,13 @@
         "details": "1. Pindahkan section 'How it works' dari dashboard ke landing page menggantikan yang sekarang 2. Pindahkan section 'Roadmap' dari dashboard ke landing page 3. Pastikan komponen React mengikuti SOLID principles dan Single Responsibility Principle 4. Gunakan reusable component approach",
         "status": "completed",
         "priority": "high"
+      },
+      "7": {
+        "id": "7",
+        "content": "Update data dari tahun 2024 ke 2025/2026",
+        "details": "1. Analisis data existing yang menggunakan referensi tahun 2024 2. Buat sample data baru dengan timeline 2025/2026 untuk politics dan crypto events 3. Update database Supabase dengan data terbaru 4. Update komponen React jika diperlukan (mengikuti SOLID principles) 5. Testing dan deployment website dengan data baru",
+        "status": "pending",
+        "priority": "high"
       }
     }
   }
