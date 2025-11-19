@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GambitAI - Update Database to 2025/2026</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #1a1a1a;
+      color: #fff;
+    }
+    .container {
+      background: #2a2a2a;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    h1 {
+      color: #60a5fa;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: #9ca3af;
+      margin-bottom: 30px;
+    }
+    button {
+      background: linear-gradient(to right, #3b82f6, #8b5cf6);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+    }
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+    #output {
+      margin-top: 20px;
+      padding: 15px;
+      background: #1a1a1a;
+      border-radius: 8px;
+      border-left: 4px solid #3b82f6;
+      font-family: monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+    .success { color: #10b981; }
+    .error { color: #ef4444; }
+    .info { color: #60a5fa; }
+    .warning { color: #f59e0b; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>GambitAI Database Updater</h1>
+    <p class="subtitle">Update arbitrage opportunities to 2025/2026 timeline</p>
+    
+    <button id="updateBtn" onclick="updateDatabase()">
+      🚀 Start Update
+    </button>
+    
+    <div id="output"></div>
+  </div>
+
+  <script>
+    const SUPABASE_URL = 'https://bpbtgkunrdzcoyfdhskh.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJwYnRna3VucmR6Y295ZmRoc2toIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI5MjAzNzUsImV4cCI6MjA3ODQ5NjM3NX0.ZAtjUoDnIWUOs6Os1NUGKIRUQVOuXDlaCJ4HwQqZu50';
+    
+    const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    
+    function log(message, type = 'info') {
+      const output = document.getElementById('output');
+      const className = type;
+      output.innerHTML += `<span class="${className}">${message}</span>\n`;
+      output.scrollTop = output.scrollHeight;
+    }
+
+    async function updateDatabase() {
+      const btn = document.getElementById('updateBtn');
+      btn.disabled = true;
+      
+      const output = document.getElementById('output');
+      output.innerHTML = '';
+      
+      log('='.repeat(60), 'info');
+      log('GambitAI Database Update - 2025/2026 Timeline', 'info');
+      log('='.repeat(60), 'info');
+      log('');
+      
+      try {
+        // Call edge function to update data
+        log('[1/1] Calling update edge function...', 'info');
+        
+        const response = await fetch(`${SUPABASE_URL}/functions/v1/load-sample-data`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({})
+        });
+        
+        if (!response.ok) {
+          const error = await response.text();
+          throw new Error(`Update failed: ${error}`);
+        }
+        
+        const result = await response.json();
+        
+        log('✓ Update completed successfully!', 'success');
+        log(`✓ Inserted: ${result.data.inserted} opportunities`, 'success');
+        log('');
+        log('='.repeat(60), 'info');
+        log('Please refresh your dashboard to see updated data', 'warning');
+        log('='.repeat(60), 'info');
+        
+      } catch (error) {
+        log('');
+        log('✗ Error during update:', 'error');
+        log(error.message, 'error');
+        log('');
+        log('Please contact support or try again later.', 'warning');
+      } finally {
+        btn.disabled = false;
+      }
+    }
+  </script>
+</body>
+</html>

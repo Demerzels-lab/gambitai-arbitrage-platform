@@ -46,8 +46,8 @@
       "7": {
         "id": "7",
         "content": "Update data dari tahun 2024 ke 2025/2026",
-        "details": "1. Analisis data existing yang menggunakan referensi tahun 2024 2. Buat sample data baru dengan timeline 2025/2026 untuk politics dan crypto events 3. Update database Supabase dengan data terbaru 4. Update komponen React jika diperlukan (mengikuti SOLID principles) 5. Testing dan deployment website dengan data baru",
-        "status": "pending",
+        "details": "1. Analisis data existing yang menggunakan referensi tahun 2024 di SELURUH Dashboard 2. Buat sample data baru dengan timeline 2025/2026 untuk: Markets page (bila ada referensi 2024), Analytics page Recent Opportunities, Calculator examples, Historical data, Settings data 3. Update database Supabase dengan data terbaru 4. Update komponen React jika diperlukan (mengikuti SOLID principles) 5. Testing dan deployment website dengan data baru yang sepenuhnya 2025/2026",
+        "status": "in_progress",
         "priority": "high"
       }
     }

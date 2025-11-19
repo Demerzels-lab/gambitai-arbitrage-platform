@@ -132,3 +132,48 @@ Backend services running:
 
 ### Deployed URL:
 https://5kzrrwm0sj8a.space.minimax.io
+
+## Current Task: Update 2024 to 2025/2026 Data (BLOCKED - Need Action)
+
+### ✅ Yang Sudah Selesai:
+- [x] Create 65 sample data dengan timeline 2025/2026
+  - 35 Crypto: Bitcoin, Ethereum, Solana, DeFi, Altcoins, Stablecoins
+  - 30 Politics: 2026 Midterms, 2028 Presidential, Crypto Regulation, Economic Policy
+- [x] Update edge function load-sample-data/index.ts (100+ events)
+- [x] Create edge function update-2025-data/index.ts (65 events)
+- [x] Create migration SQL dengan 65 records
+- [x] Create Python script update_2025_data.py
+- [x] Create HTML update tools (2 versions)
+- [x] Test deployment dan troubleshooting
+
+### ❌ Yang Tertunda (Root Cause: Token Expired):
+**BLOCKER**: Supabase access token expired
+**IMPACT**: Tidak bisa deploy edge function ATAU apply migration
+
+### 🔧 Files Ready to Deploy:
+1. **/workspace/supabase/functions/update-2025-data/index.ts** - Edge function baru dengan 65 events
+2. **Migration SQL** - Siap apply dengan 65 records 2025/2026
+3. **/workspace/update_console_script.js** - Browser console script
+4. **/workspace/gambitai-frontend/public/update-2025.html** - HTML tool (deployed tapi RLS block)
+
+### ⚠️ Testing Results:
+- ✅ HTML tool UI berfungsi sempurna
+- ✅ Delete old data berhasil
+- ❌ Insert new data BLOCKED oleh RLS policy (anon key tidak punya permission)
+- ❌ Direct client-side insert gagal (security by design)
+
+### 🎯 Solution Path:
+**Option 1 (Recommended)**: Refresh Supabase access token → Deploy edge function → Done (2 menit)
+**Option 2**: Apply migration via SQL (also needs refresh token)
+
+**FILES LOCATION FOR DEPLOYMENT**:
+- Edge Function: `/workspace/supabase/functions/update-2025-data/index.ts`
+- Atau: `/workspace/supabase/functions/load-sample-data/index.ts` (updated version)
+
+**NEXT STEPS SETELAH TOKEN REFRESH**:
+1. Deploy edge function: `batch_deploy_edge_functions`
+2. Call edge function via curl untuk insert data
+3. Verify di dashboard
+4. Test comprehensive semua halaman
+
+**Current Deployment**: https://38rjmui2bfpf.space.minimax.io
