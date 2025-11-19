@@ -1,0 +1,20 @@
+CREATE TABLE markets (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    platform TEXT NOT NULL CHECK (platform IN ('polymarket',
+    'kalshi')),
+    market_id TEXT NOT NULL,
+    event_name TEXT NOT NULL,
+    category TEXT NOT NULL CHECK (category IN ('crypto',
+    'politics')),
+    current_price NUMERIC NOT NULL,
+    volume_24h NUMERIC DEFAULT 0,
+    open_interest NUMERIC DEFAULT 0,
+    last_updated TIMESTAMPTZ DEFAULT NOW(),
+    status TEXT NOT NULL DEFAULT 'active' CHECK (status IN ('active',
+    'closed',
+    'settled')),
+    metadata JSONB,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    UNIQUE(platform,
+    market_id)
+);
