@@ -132,15 +132,15 @@ export default function Dashboard() {
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700">
+        <div className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-6 border border-teal-700">
           <div className="flex items-center justify-between mb-2">
             <span className="text-gray-400 text-sm">Active Opportunities</span>
-            <TrendingUp className="w-5 h-5 text-blue-400" />
+            <TrendingUp className="w-5 h-5 text-teal-400" />
           </div>
           <div className="text-3xl font-bold text-white">{stats.total}</div>
         </div>
 
-        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700">
+        <div className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-6 border border-teal-700">
           <div className="flex items-center justify-between mb-2">
             <span className="text-gray-400 text-sm">Avg. Profit</span>
             <DollarSign className="w-5 h-5 text-green-400" />
@@ -148,7 +148,7 @@ export default function Dashboard() {
           <div className="text-3xl font-bold text-white">{stats.avgProfit}%</div>
         </div>
 
-        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700">
+        <div className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-6 border border-teal-700">
           <div className="flex items-center justify-between mb-2">
             <span className="text-gray-400 text-sm">High Confidence</span>
             <CheckCircle className="w-5 h-5 text-green-400" />
@@ -156,10 +156,10 @@ export default function Dashboard() {
           <div className="text-3xl font-bold text-white">{stats.highConfidence}</div>
         </div>
 
-        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700">
+        <div className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-6 border border-teal-700">
           <div className="flex items-center justify-between mb-2">
             <span className="text-gray-400 text-sm">Total Expected Profit</span>
-            <TrendingUp className="w-5 h-5 text-purple-400" />
+            <TrendingUp className="w-5 h-5 text-teal-500" />
           </div>
           <div className="text-3xl font-bold text-white">${stats.totalExpectedProfit.toLocaleString()}</div>
         </div>
@@ -172,8 +172,8 @@ export default function Dashboard() {
           onClick={() => setFilter('all')}
           className={`px-4 py-2 rounded-lg transition-colors ${
             filter === 'all'
-              ? 'bg-blue-600 text-white'
-              : 'bg-gray-700/50 text-gray-300 hover:bg-gray-700'
+              ? 'bg-teal-500 text-white'
+              : 'bg-teal-800/50 text-gray-300 hover:bg-teal-800'
           }`}
         >
           All
@@ -182,8 +182,8 @@ export default function Dashboard() {
           onClick={() => setFilter('crypto')}
           className={`px-4 py-2 rounded-lg transition-colors ${
             filter === 'crypto'
-              ? 'bg-blue-600 text-white'
-              : 'bg-gray-700/50 text-gray-300 hover:bg-gray-700'
+              ? 'bg-teal-500 text-white'
+              : 'bg-teal-800/50 text-gray-300 hover:bg-teal-800'
           }`}
         >
           Crypto
@@ -192,8 +192,8 @@ export default function Dashboard() {
           onClick={() => setFilter('politics')}
           className={`px-4 py-2 rounded-lg transition-colors ${
             filter === 'politics'
-              ? 'bg-blue-600 text-white'
-              : 'bg-gray-700/50 text-gray-300 hover:bg-gray-700'
+              ? 'bg-teal-500 text-white'
+              : 'bg-teal-800/50 text-gray-300 hover:bg-teal-800'
           }`}
         >
           Politics
@@ -202,7 +202,7 @@ export default function Dashboard() {
 
       {/* Opportunities List */}
       {opportunities.length === 0 ? (
-        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-12 border border-gray-700 text-center">
+        <div className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-12 border border-teal-700 text-center">
           <AlertCircle className="w-12 h-12 text-gray-500 mx-auto mb-4" />
           <h3 className="text-xl font-semibold text-gray-300 mb-2">No opportunities found</h3>
           <p className="text-gray-500">Check back soon for new arbitrage opportunities</p>
@@ -214,13 +214,13 @@ export default function Dashboard() {
             return (
               <div
                 key={opportunity.id}
-                className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all cursor-pointer hover:shadow-lg hover:shadow-blue-500/10"
+                className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-6 border border-teal-700 hover:border-teal-400/50 transition-all cursor-pointer hover:shadow-lg hover:shadow-teal-400/10"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex-1">
                     <div className="flex items-center space-x-3 mb-2">
                       <h3 className="text-lg font-semibold text-white">{opportunity.event_name}</h3>
-                      <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs font-medium rounded border border-blue-500/50 uppercase">
+                      <span className="px-2 py-1 bg-teal-400/20 text-teal-400 text-xs font-medium rounded border border-teal-400/50 uppercase">
                         {opportunity.category}
                       </span>
                     </div>
@@ -255,7 +255,7 @@ export default function Dashboard() {
                 </div>
 
                 {isExpanded && (
-                  <div className="mb-4 p-4 bg-gray-900/50 rounded-lg space-y-3 animate-in fade-in duration-200">
+                  <div className="mb-4 p-4 bg-teal-950/50 rounded-lg space-y-3 animate-in fade-in duration-200">
                     <div className="grid grid-cols-2 gap-4">
                       <div>
                         <div className="text-gray-400 text-sm mb-1">Optimal Bet Amount</div>
@@ -284,18 +284,18 @@ export default function Dashboard() {
                   </div>
                 )}
 
-                <div className="flex items-center justify-between pt-4 border-t border-gray-700">
+                <div className="flex items-center justify-between pt-4 border-t border-teal-700">
                   <div className="flex items-center space-x-3">
                     <button
                       onClick={(e) => { e.stopPropagation(); handleCalculate(opportunity); }}
-                      className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors flex items-center space-x-2"
+                      className="px-4 py-2 bg-teal-500 hover:bg-teal-600 text-white text-sm rounded-lg transition-colors flex items-center space-x-2"
                     >
                       <Calculator className="w-4 h-4" />
                       <span>Calculate</span>
                     </button>
                     <button
                       onClick={(e) => { e.stopPropagation(); toggleCard(opportunity.id); }}
-                      className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white text-sm rounded-lg transition-colors flex items-center space-x-2"
+                      className="px-4 py-2 bg-teal-800 hover:bg-gray-600 text-white text-sm rounded-lg transition-colors flex items-center space-x-2"
                     >
                       {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                       <span>{isExpanded ? 'Less' : 'More'} Details</span>

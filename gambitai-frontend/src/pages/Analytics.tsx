@@ -55,15 +55,15 @@ export default function Analytics() {
 
       {/* Summary Stats */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700">
+        <div className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-6 border border-teal-700">
           <div className="flex items-center justify-between mb-2">
             <span className="text-gray-400 text-sm">Total Opportunities</span>
-            <TrendingUp className="w-5 h-5 text-blue-400" />
+            <TrendingUp className="w-5 h-5 text-teal-400" />
           </div>
           <div className="text-3xl font-bold text-white">{stats.totalOpportunities}</div>
         </div>
 
-        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700">
+        <div className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-6 border border-teal-700">
           <div className="flex items-center justify-between mb-2">
             <span className="text-gray-400 text-sm">Avg. Profit Potential</span>
             <Target className="w-5 h-5 text-green-400" />
@@ -71,10 +71,10 @@ export default function Analytics() {
           <div className="text-3xl font-bold text-white">{stats.avgProfit}%</div>
         </div>
 
-        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700">
+        <div className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-6 border border-teal-700">
           <div className="flex items-center justify-between mb-2">
             <span className="text-gray-400 text-sm">Total Expected Profit</span>
-            <DollarSign className="w-5 h-5 text-purple-400" />
+            <DollarSign className="w-5 h-5 text-teal-500" />
           </div>
           <div className="text-3xl font-bold text-white">${stats.totalExpectedProfit.toLocaleString()}</div>
         </div>
@@ -82,9 +82,9 @@ export default function Analytics() {
 
       {/* Category Breakdown */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700">
+        <div className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-6 border border-teal-700">
           <div className="flex items-center space-x-2 mb-4">
-            <PieChart className="w-5 h-5 text-blue-400" />
+            <PieChart className="w-5 h-5 text-teal-400" />
             <h2 className="text-xl font-semibold text-white">Category Distribution</h2>
           </div>
           <div className="space-y-4">
@@ -93,9 +93,9 @@ export default function Analytics() {
                 <span className="text-gray-300">Crypto</span>
                 <span className="text-white font-semibold">{stats.cryptoCount}</span>
               </div>
-              <div className="w-full bg-gray-700 rounded-full h-2">
+              <div className="w-full bg-teal-800 rounded-full h-2">
                 <div
-                  className="bg-blue-500 h-2 rounded-full"
+                  className="bg-teal-400 h-2 rounded-full"
                   style={{
                     width: `${(stats.cryptoCount / stats.totalOpportunities) * 100}%`,
                   }}
@@ -107,9 +107,9 @@ export default function Analytics() {
                 <span className="text-gray-300">Politics</span>
                 <span className="text-white font-semibold">{stats.politicsCount}</span>
               </div>
-              <div className="w-full bg-gray-700 rounded-full h-2">
+              <div className="w-full bg-teal-800 rounded-full h-2">
                 <div
-                  className="bg-purple-500 h-2 rounded-full"
+                  className="bg-teal-600 h-2 rounded-full"
                   style={{
                     width: `${(stats.politicsCount / stats.totalOpportunities) * 100}%`,
                   }}
@@ -119,7 +119,7 @@ export default function Analytics() {
           </div>
         </div>
 
-        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700">
+        <div className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-6 border border-teal-700">
           <div className="flex items-center space-x-2 mb-4">
             <Target className="w-5 h-5 text-green-400" />
             <h2 className="text-xl font-semibold text-white">Confidence Levels</h2>
@@ -133,7 +133,7 @@ export default function Analytics() {
                     <span className="text-gray-300 capitalize">{level}</span>
                     <span className="text-white font-semibold">{count}</span>
                   </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
+                  <div className="w-full bg-teal-800 rounded-full h-2">
                     <div
                       className={`h-2 rounded-full ${
                         level === 'high' ? 'bg-green-500' : level === 'medium' ? 'bg-yellow-500' : 'bg-red-500'
@@ -151,12 +151,12 @@ export default function Analytics() {
       </div>
 
       {/* Recent Opportunities */}
-      <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700">
+      <div className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-6 border border-teal-700">
         <h2 className="text-xl font-semibold text-white mb-4">Recent Opportunities</h2>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-gray-700">
+              <tr className="border-b border-teal-700">
                 <th className="text-left text-gray-400 text-sm font-medium py-3">Event</th>
                 <th className="text-left text-gray-400 text-sm font-medium py-3">Category</th>
                 <th className="text-left text-gray-400 text-sm font-medium py-3">Spread</th>
@@ -170,7 +170,7 @@ export default function Analytics() {
                 <tr key={opp.id} className="border-b border-gray-800">
                   <td className="py-4 text-white">{opp.event_name.substring(0, 50)}...</td>
                   <td className="py-4">
-                    <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded">
+                    <span className="px-2 py-1 bg-teal-400/20 text-teal-400 text-xs rounded">
                       {opp.category}
                     </span>
                   </td>

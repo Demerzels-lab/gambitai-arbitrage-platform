@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd gambitai-frontend && pnpm install --prefer-offline && pnpm run build",
+  "outputDirectory": "gambitai-frontend/dist",
+  "framework": null,
+  "installCommand": "pnpm install --prefer-offline",
+  "devCommand": "cd gambitai-frontend && pnpm run dev"
+}

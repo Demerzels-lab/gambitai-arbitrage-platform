@@ -3,13 +3,13 @@ import { TrendingUp, Check } from 'lucide-react';
 
 export default function Pricing() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+    <div className="min-h-screen bg-teal-950">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-teal-950/95 backdrop-blur-sm border-b border-teal-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center space-x-2">
-              <TrendingUp className="h-8 w-8 text-emerald-500" />
+              <TrendingUp className="h-8 w-8 text-teal-500" />
               <span className="text-2xl font-bold text-white">GambitAI</span>
             </Link>
             <div className="hidden md:flex items-center space-x-8">
@@ -19,7 +19,7 @@ export default function Pricing() {
               <Link to="/login" className="text-gray-300 hover:text-white transition-colors">Sign In</Link>
               <Link 
                 to="/signup" 
-                className="px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold"
+                className="px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors font-semibold"
               >
                 Get Started
               </Link>
@@ -45,7 +45,7 @@ export default function Pricing() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             {/* Free Plan */}
-            <div className="bg-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-gray-600 transition-colors">
+            <div className="bg-teal-950 p-8 rounded-2xl border border-teal-700 hover:border-teal-600 transition-colors">
               <div className="mb-8">
                 <h3 className="text-2xl font-bold text-white mb-2">Free</h3>
                 <p className="text-gray-400 mb-6">To get started and try the platform</p>
@@ -57,23 +57,23 @@ export default function Pricing() {
 
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start text-gray-300">
-                  <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span>10 alert notifications per day</span>
                 </li>
                 <li className="flex items-start text-gray-300">
-                  <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span>Basic dashboard access</span>
                 </li>
                 <li className="flex items-start text-gray-300">
-                  <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span>7-day historical data</span>
                 </li>
                 <li className="flex items-start text-gray-300">
-                  <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span>Arbitrage calculator</span>
                 </li>
                 <li className="flex items-start text-gray-300">
-                  <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span>Email support (48 hours)</span>
                 </li>
                 <li className="flex items-start text-gray-400">
@@ -88,15 +88,15 @@ export default function Pricing() {
 
               <Link
                 to="/signup"
-                className="block w-full px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors text-center font-semibold border border-gray-700"
+                className="block w-full px-6 py-3 bg-teal-900 text-white rounded-lg hover:bg-teal-800 transition-colors text-center font-semibold border border-teal-700"
               >
                 Get Started
               </Link>
             </div>
 
             {/* Pro Plan */}
-            <div className="bg-gradient-to-b from-emerald-900/50 to-gray-900 p-8 rounded-2xl border-2 border-emerald-500 relative transform md:scale-105 shadow-2xl shadow-emerald-500/20">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-emerald-500 text-white px-6 py-1 rounded-full text-sm font-semibold">
+            <div className="bg-gradient-to-b from-teal-900/50 to-gray-900 p-8 rounded-2xl border-2 border-teal-500 relative transform md:scale-105 shadow-2xl shadow-teal-500/20">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-teal-500 text-white px-6 py-1 rounded-full text-sm font-semibold">
                 MOST POPULAR
               </div>
               
@@ -112,31 +112,31 @@ export default function Pricing() {
 
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start text-gray-300">
-                  <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span>Unlimited alert notifications</span>
                 </li>
                 <li className="flex items-start text-gray-300">
-                  <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span>Full dashboard with analytics</span>
                 </li>
                 <li className="flex items-start text-gray-300">
-                  <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span>90-day historical data</span>
                 </li>
                 <li className="flex items-start text-gray-300">
-                  <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span>Advanced arbitrage calculator</span>
                 </li>
                 <li className="flex items-start text-gray-300">
-                  <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span>Premium Telegram bot with instant alerts</span>
                 </li>
                 <li className="flex items-start text-gray-300">
-                  <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span>Custom alert threshold</span>
                 </li>
                 <li className="flex items-start text-gray-300">
-                  <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span>Priority support (24 hours)</span>
                 </li>
                 <li className="flex items-start text-gray-400">
@@ -147,14 +147,14 @@ export default function Pricing() {
 
               <Link
                 to="/signup"
-                className="block w-full px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors text-center font-semibold shadow-lg"
+                className="block w-full px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors text-center font-semibold shadow-lg"
               >
                 Start Pro
               </Link>
             </div>
 
             {/* Enterprise Plan */}
-            <div className="bg-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-gray-600 transition-colors">
+            <div className="bg-teal-950 p-8 rounded-2xl border border-teal-700 hover:border-teal-600 transition-colors">
               <div className="mb-8">
                 <h3 className="text-2xl font-bold text-white mb-2">Enterprise</h3>
                 <p className="text-gray-400 mb-6">For organizations and institutional traders</p>
@@ -166,42 +166,42 @@ export default function Pricing() {
 
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start text-gray-300">
-                  <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span>All Pro features</span>
                 </li>
                 <li className="flex items-start text-gray-300">
-                  <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span>API access with high rate limits</span>
                 </li>
                 <li className="flex items-start text-gray-300">
-                  <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span>Data historis unlimited</span>
                 </li>
                 <li className="flex items-start text-gray-300">
-                  <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span>Custom integration & webhooks</span>
                 </li>
                 <li className="flex items-start text-gray-300">
-                  <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span>White-label solution</span>
                 </li>
                 <li className="flex items-start text-gray-300">
-                  <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span>Dedicated account manager</span>
                 </li>
                 <li className="flex items-start text-gray-300">
-                  <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span>24/7 dedicated support</span>
                 </li>
                 <li className="flex items-start text-gray-300">
-                  <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span>SLA guarantee</span>
                 </li>
               </ul>
 
               <Link
                 to="/contact"
-                className="block w-full px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors text-center font-semibold border border-gray-700"
+                className="block w-full px-6 py-3 bg-teal-900 text-white rounded-lg hover:bg-teal-800 transition-colors text-center font-semibold border border-teal-700"
               >
                 Contact Sales
               </Link>
@@ -211,13 +211,13 @@ export default function Pricing() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-800/50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-teal-900/50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-white mb-12 text-center">
             Frequently Asked Questions
           </h2>
           <div className="space-y-6">
-            <div className="bg-gray-900 p-6 rounded-xl border border-gray-700">
+            <div className="bg-teal-950 p-6 rounded-xl border border-teal-700">
               <h3 className="text-xl font-bold text-white mb-2">
                 Can I upgrade or downgrade my plan anytime?
               </h3>
@@ -225,7 +225,7 @@ export default function Pricing() {
                 Yes, you can upgrade or downgrade your plan at any time. Changes will take effect in the next billing period.
               </p>
             </div>
-            <div className="bg-gray-900 p-6 rounded-xl border border-gray-700">
+            <div className="bg-teal-950 p-6 rounded-xl border border-teal-700">
               <h3 className="text-xl font-bold text-white mb-2">
                 Are there any hidden fees?
               </h3>
@@ -233,7 +233,7 @@ export default function Pricing() {
                 No hidden fees. The pricing displayed is final with no additional charges.
               </p>
             </div>
-            <div className="bg-gray-900 p-6 rounded-xl border border-gray-700">
+            <div className="bg-teal-950 p-6 rounded-xl border border-teal-700">
               <h3 className="text-xl font-bold text-white mb-2">
                 What payment methods do you accept?
               </h3>
@@ -241,7 +241,7 @@ export default function Pricing() {
                 We accept payments via credit card, bank transfer, and e-wallets. For Enterprise plans, we also accept invoice payments.
               </p>
             </div>
-            <div className="bg-gray-900 p-6 rounded-xl border border-gray-700">
+            <div className="bg-teal-950 p-6 rounded-xl border border-teal-700">
               <h3 className="text-xl font-bold text-white mb-2">
                 Is there a money-back guarantee?
               </h3>
@@ -249,7 +249,7 @@ export default function Pricing() {
                 Yes, we offer a 14-day money-back guarantee for paid plans if you're not satisfied with our service.
               </p>
             </div>
-            <div className="bg-gray-900 p-6 rounded-xl border border-gray-700">
+            <div className="bg-teal-950 p-6 rounded-xl border border-teal-700">
               <h3 className="text-xl font-bold text-white mb-2">
                 Is my data secure?
               </h3>
@@ -272,7 +272,7 @@ export default function Pricing() {
           </p>
           <Link
             to="/signup"
-            className="inline-block px-8 py-4 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold text-lg"
+            className="inline-block px-8 py-4 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors font-semibold text-lg"
           >
             Get Started Now
           </Link>
@@ -280,12 +280,12 @@ export default function Pricing() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 border-t border-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+      <footer className="bg-teal-950 border-t border-teal-800 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <TrendingUp className="h-6 w-6 text-emerald-500" />
+                <TrendingUp className="h-6 w-6 text-teal-500" />
                 <span className="text-xl font-bold text-white">GambitAI</span>
               </div>
               <p className="text-gray-400 text-sm">
@@ -315,7 +315,7 @@ export default function Pricing() {
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+          <div className="border-t border-teal-800 pt-8 text-center text-gray-400 text-sm">
             © 2025 GambitAI. All rights reserved.
           </div>
         </div>

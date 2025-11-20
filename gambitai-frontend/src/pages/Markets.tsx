@@ -62,7 +62,7 @@ export default function Markets() {
           <select
             value={platform}
             onChange={(e) => setPlatform(e.target.value as any)}
-            className="px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-4 py-2 bg-teal-800/50 border border-teal-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-teal-400"
           >
             <option value="all">All Platforms</option>
             <option value="polymarket">Polymarket</option>
@@ -75,7 +75,7 @@ export default function Markets() {
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value as any)}
-            className="px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-4 py-2 bg-teal-800/50 border border-teal-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-teal-400"
           >
             <option value="all">All Categories</option>
             <option value="crypto">Crypto</option>
@@ -89,13 +89,13 @@ export default function Markets() {
         {markets.map((market) => (
           <div
             key={market.id}
-            className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all"
+            className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-6 border border-teal-700 hover:border-teal-400/50 transition-all"
           >
             <div className="flex items-center justify-between mb-3">
               <span className={`px-2 py-1 text-xs font-medium rounded border ${
                 market.platform === 'polymarket'
-                  ? 'bg-purple-500/20 text-purple-400 border-purple-500/50'
-                  : 'bg-blue-500/20 text-blue-400 border-blue-500/50'
+                  ? 'bg-teal-600/20 text-teal-500 border-teal-600/50'
+                  : 'bg-teal-400/20 text-teal-400 border-teal-400/50'
               }`}>
                 {market.platform.toUpperCase()}
               </span>
@@ -130,7 +130,7 @@ export default function Markets() {
                 <span className="text-white font-semibold">${market.open_interest.toLocaleString()}</span>
               </div>
 
-              <div className="flex items-center justify-between pt-3 border-t border-gray-700">
+              <div className="flex items-center justify-between pt-3 border-t border-teal-700">
                 <span className="text-gray-500 text-xs flex items-center">
                   <Clock className="w-3 h-3 mr-1" />
                   Updated
@@ -145,7 +145,7 @@ export default function Markets() {
       </div>
 
       {markets.length === 0 && (
-        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-12 border border-gray-700 text-center">
+        <div className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-12 border border-teal-700 text-center">
           <h3 className="text-xl font-semibold text-gray-300 mb-2">No markets found</h3>
           <p className="text-gray-500">Try adjusting your filters</p>
         </div>

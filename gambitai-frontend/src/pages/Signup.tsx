@@ -41,11 +41,11 @@ export default function Signup() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-teal-950 via-teal-900 to-teal-950 flex items-center justify-center p-4">
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
           <div className="inline-flex items-center space-x-3 mb-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+            <div className="w-12 h-12 bg-gradient-to-br from-teal-400 to-teal-700 rounded-xl flex items-center justify-center">
               <TrendingUp className="w-7 h-7 text-white" />
             </div>
             <span className="text-white text-3xl font-bold">GambitAI</span>
@@ -54,7 +54,7 @@ export default function Signup() {
           <p className="text-gray-400">Start tracking arbitrage opportunities today</p>
         </div>
 
-        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
+        <div className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-8 border border-teal-700">
           {error && (
             <div className="mb-4 p-3 bg-red-500/10 border border-red-500/50 rounded-lg text-red-400 text-sm">
               {error}
@@ -69,7 +69,7 @@ export default function Signup() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 bg-teal-950/50 border border-teal-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent"
                 placeholder="you@example.com"
               />
             </div>
@@ -82,7 +82,7 @@ export default function Signup() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 minLength={6}
-                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 bg-teal-950/50 border border-teal-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent"
                 placeholder="••••••••"
               />
             </div>
@@ -95,7 +95,7 @@ export default function Signup() {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
                 minLength={6}
-                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 bg-teal-950/50 border border-teal-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent"
                 placeholder="••••••••"
               />
             </div>
@@ -103,7 +103,7 @@ export default function Signup() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium py-3 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+              className="w-full bg-gradient-to-r from-teal-500 to-teal-700 hover:from-teal-600 hover:to-teal-700 text-white font-medium py-3 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
             >
               {loading ? 'Creating account...' : 'Create Account'}
             </button>
@@ -112,7 +112,7 @@ export default function Signup() {
           <div className="mt-6 text-center">
             <p className="text-gray-400">
               Already have an account?{' '}
-              <Link to="/login" className="text-blue-400 hover:text-blue-300 font-medium">
+              <Link to="/login" className="text-teal-400 hover:text-teal-300 font-medium">
                 Sign in
               </Link>
             </p>

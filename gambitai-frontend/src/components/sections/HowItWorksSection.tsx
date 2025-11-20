@@ -12,7 +12,7 @@ export default function HowItWorksSection({ showCTA = true, className = '' }: Ho
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <div className="inline-flex items-center space-x-3 mb-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+            <div className="w-12 h-12 bg-gradient-to-br from-teal-400 to-teal-700 rounded-xl flex items-center justify-center">
               <TrendingUp className="w-7 h-7 text-white" />
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white">How GambitAI Works</h2>
@@ -23,7 +23,7 @@ export default function HowItWorksSection({ showCTA = true, className = '' }: Ho
         </div>
 
         {/* What is Arbitrage */}
-        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700 mb-8">
+        <div className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-8 border border-teal-700 mb-8">
           <h3 className="text-2xl font-bold text-white mb-4">What is Arbitrage?</h3>
           <p className="text-gray-300 mb-4">
             Arbitrage is the practice of taking advantage of price differences for the same asset across different markets. 
@@ -38,9 +38,9 @@ export default function HowItWorksSection({ showCTA = true, className = '' }: Ho
 
         {/* How it Works Steps */}
         <div className="space-y-6 mb-12">
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 flex items-start space-x-4">
-            <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-              <Search className="w-6 h-6 text-blue-400" />
+          <div className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-6 border border-teal-700 flex items-start space-x-4">
+            <div className="w-12 h-12 bg-teal-400/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <Search className="w-6 h-6 text-teal-400" />
             </div>
             <div className="flex-1">
               <h4 className="text-xl font-semibold text-white mb-2">1. Market Monitoring</h4>
@@ -51,9 +51,9 @@ export default function HowItWorksSection({ showCTA = true, className = '' }: Ho
             </div>
           </div>
 
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 flex items-start space-x-4">
-            <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-              <Calculator className="w-6 h-6 text-purple-400" />
+          <div className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-6 border border-teal-700 flex items-start space-x-4">
+            <div className="w-12 h-12 bg-teal-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <Calculator className="w-6 h-6 text-teal-500" />
             </div>
             <div className="flex-1">
               <h4 className="text-xl font-semibold text-white mb-2">2. Arbitrage Detection</h4>
@@ -64,7 +64,7 @@ export default function HowItWorksSection({ showCTA = true, className = '' }: Ho
             </div>
           </div>
 
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 flex items-start space-x-4">
+          <div className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-6 border border-teal-700 flex items-start space-x-4">
             <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
               <Bell className="w-6 h-6 text-green-400" />
             </div>
@@ -77,7 +77,7 @@ export default function HowItWorksSection({ showCTA = true, className = '' }: Ho
             </div>
           </div>
 
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 flex items-start space-x-4">
+          <div className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-6 border border-teal-700 flex items-start space-x-4">
             <div className="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
               <TrendingUp className="w-6 h-6 text-yellow-400" />
             </div>
@@ -92,7 +92,7 @@ export default function HowItWorksSection({ showCTA = true, className = '' }: Ho
         </div>
 
         {/* Key Features */}
-        <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-xl p-8 border border-blue-500/30 mb-8">
+        <div className="bg-gradient-to-br from-teal-400/10 to-teal-600/10 rounded-xl p-8 border border-teal-400/30 mb-8">
           <h3 className="text-2xl font-bold text-white mb-6">Key Features</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -119,7 +119,7 @@ export default function HowItWorksSection({ showCTA = true, className = '' }: Ho
           <div className="text-center">
             <Link
               to="/signup"
-              className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium px-8 py-4 rounded-lg transition-all shadow-lg"
+              className="inline-flex items-center space-x-2 bg-gradient-to-r from-teal-500 to-teal-700 hover:from-teal-600 hover:to-teal-700 text-white font-medium px-8 py-4 rounded-lg transition-all shadow-lg"
             >
               <span>Get Started Now</span>
               <ArrowRight className="w-5 h-5" />

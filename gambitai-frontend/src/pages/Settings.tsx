@@ -127,9 +127,9 @@ export default function Settings() {
         <p className="text-gray-400">Configure your alert preferences and notifications</p>
       </div>
 
-      <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 max-w-2xl">
+      <div className="bg-teal-900/50 backdrop-blur-sm rounded-xl p-6 border border-teal-700 max-w-2xl">
         <div className="flex items-center space-x-2 mb-6">
-          <Bell className="w-6 h-6 text-blue-400" />
+          <Bell className="w-6 h-6 text-teal-400" />
           <h2 className="text-xl font-semibold text-white">Alert Preferences</h2>
         </div>
 
@@ -143,7 +143,7 @@ export default function Settings() {
             <button
               onClick={() => setEnabled(!enabled)}
               className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                enabled ? 'bg-blue-600' : 'bg-gray-600'
+                enabled ? 'bg-teal-500' : 'bg-gray-600'
               }`}
             >
               <span
@@ -165,7 +165,7 @@ export default function Settings() {
               value={telegramChatId}
               onChange={(e) => setTelegramChatId(e.target.value)}
               placeholder="123456789"
-              className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 bg-teal-950/50 border border-teal-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-400"
             />
           </div>
 
@@ -181,7 +181,7 @@ export default function Settings() {
               step="5"
               value={minProfitPercentage}
               onChange={(e) => setMinProfitPercentage(parseInt(e.target.value))}
-              className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-blue-600"
+              className="w-full h-2 bg-teal-800 rounded-lg appearance-none cursor-pointer accent-teal-500"
             />
             <div className="flex justify-between text-gray-500 text-xs mt-1">
               <span>5%</span>
@@ -197,8 +197,8 @@ export default function Settings() {
                 onClick={() => toggleCategory('crypto')}
                 className={`px-4 py-2 rounded-lg border transition-colors ${
                   categories.includes('crypto')
-                    ? 'bg-blue-600 border-blue-600 text-white'
-                    : 'bg-gray-700/50 border-gray-600 text-gray-300 hover:bg-gray-700'
+                    ? 'bg-teal-500 border-teal-500 text-white'
+                    : 'bg-teal-800/50 border-teal-600 text-gray-300 hover:bg-teal-800'
                 }`}
               >
                 Crypto
@@ -207,8 +207,8 @@ export default function Settings() {
                 onClick={() => toggleCategory('politics')}
                 className={`px-4 py-2 rounded-lg border transition-colors ${
                   categories.includes('politics')
-                    ? 'bg-blue-600 border-blue-600 text-white'
-                    : 'bg-gray-700/50 border-gray-600 text-gray-300 hover:bg-gray-700'
+                    ? 'bg-teal-500 border-teal-500 text-white'
+                    : 'bg-teal-800/50 border-teal-600 text-gray-300 hover:bg-teal-800'
                 }`}
               >
                 Politics
@@ -226,8 +226,8 @@ export default function Settings() {
                   onClick={() => setMinConfidence(level)}
                   className={`px-4 py-2 rounded-lg border transition-colors capitalize ${
                     minConfidence === level
-                      ? 'bg-blue-600 border-blue-600 text-white'
-                      : 'bg-gray-700/50 border-gray-600 text-gray-300 hover:bg-gray-700'
+                      ? 'bg-teal-500 border-teal-500 text-white'
+                      : 'bg-teal-800/50 border-teal-600 text-gray-300 hover:bg-teal-800'
                   }`}
                 >
                   {level}
@@ -240,7 +240,7 @@ export default function Settings() {
           <button
             onClick={handleSave}
             disabled={saving}
-            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium py-3 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg flex items-center justify-center space-x-2"
+            className="w-full bg-gradient-to-r from-teal-500 to-teal-700 hover:from-teal-600 hover:to-teal-700 text-white font-medium py-3 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg flex items-center justify-center space-x-2"
           >
             {saved ? (
               <>

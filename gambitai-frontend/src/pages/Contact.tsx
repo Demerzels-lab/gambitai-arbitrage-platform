@@ -39,18 +39,18 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+    <div className="min-h-screen bg-teal-950">
       {/* Success Toast Notification - Fixed Position */}
       {submitted && (
         <div className="fixed top-24 right-8 z-50 max-w-md animate-fade-in">
-          <div className="p-6 bg-emerald-600 border-2 border-emerald-400 rounded-xl shadow-2xl shadow-emerald-500/50">
+          <div className="p-6 bg-teal-600 border-2 border-teal-400 rounded-xl shadow-2xl shadow-teal-500/50">
             <div className="flex items-start space-x-4">
               <div className="bg-white/20 p-2 rounded-lg">
                 <CheckCircle className="h-8 w-8 text-white" />
               </div>
               <div className="flex-1">
                 <p className="text-white font-bold text-xl mb-1">Success!</p>
-                <p className="text-emerald-50 text-base">Your message has been sent successfully. We'll respond within 24 hours.</p>
+                <p className="text-teal-50 text-base">Your message has been sent successfully. We'll respond within 24 hours.</p>
               </div>
             </div>
           </div>
@@ -58,11 +58,11 @@ export default function Contact() {
       )}
       
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-teal-950/95 backdrop-blur-sm border-b border-teal-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center space-x-2">
-              <TrendingUp className="h-8 w-8 text-emerald-500" />
+              <TrendingUp className="h-8 w-8 text-teal-500" />
               <span className="text-2xl font-bold text-white">GambitAI</span>
             </Link>
             <div className="hidden md:flex items-center space-x-8">
@@ -72,7 +72,7 @@ export default function Contact() {
               <Link to="/login" className="text-gray-300 hover:text-white transition-colors">Sign In</Link>
               <Link 
                 to="/signup" 
-                className="px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold"
+                className="px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors font-semibold"
               >
                 Get Started
               </Link>
@@ -98,7 +98,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-gray-900 p-8 rounded-xl border border-gray-700 relative">
+            <div className="bg-teal-950 p-8 rounded-xl border border-teal-700 relative">
               <h2 className="text-3xl font-bold text-white mb-6">Send Message</h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -113,7 +113,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors"
+                    className="w-full px-4 py-3 bg-teal-900 border border-teal-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-teal-500 transition-colors"
                     placeholder="Your name"
                   />
                 </div>
@@ -129,7 +129,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors"
+                    className="w-full px-4 py-3 bg-teal-900 border border-teal-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-teal-500 transition-colors"
                     placeholder="email@example.com"
                   />
                 </div>
@@ -145,7 +145,7 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors"
+                    className="w-full px-4 py-3 bg-teal-900 border border-teal-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-teal-500 transition-colors"
                     placeholder="Question about..."
                   />
                 </div>
@@ -161,14 +161,14 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-teal-900 border border-teal-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-teal-500 transition-colors resize-none"
                     placeholder="Write your message here..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold"
+                  className="w-full px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors font-semibold"
                 >
                   Send Message
                 </button>
@@ -185,9 +185,9 @@ export default function Contact() {
               </div>
 
               <div className="space-y-6">
-                <div className="bg-gray-900 p-6 rounded-xl border border-gray-700 flex items-start">
-                  <div className="h-12 w-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <Mail className="h-6 w-6 text-emerald-500" />
+                <div className="bg-teal-950 p-6 rounded-xl border border-teal-700 flex items-start">
+                  <div className="h-12 w-12 bg-teal-500/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <Mail className="h-6 w-6 text-teal-500" />
                   </div>
                   <div>
                     <h3 className="text-white font-semibold mb-1">Email</h3>
@@ -196,9 +196,9 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="bg-gray-900 p-6 rounded-xl border border-gray-700 flex items-start">
-                  <div className="h-12 w-12 bg-blue-500/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <MessageSquare className="h-6 w-6 text-blue-500" />
+                <div className="bg-teal-950 p-6 rounded-xl border border-teal-700 flex items-start">
+                  <div className="h-12 w-12 bg-teal-400/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <MessageSquare className="h-6 w-6 text-teal-400" />
                   </div>
                   <div>
                     <h3 className="text-white font-semibold mb-1">Live Chat</h3>
@@ -207,9 +207,9 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="bg-gray-900 p-6 rounded-xl border border-gray-700 flex items-start">
-                  <div className="h-12 w-12 bg-purple-500/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-purple-500" />
+                <div className="bg-teal-950 p-6 rounded-xl border border-teal-700 flex items-start">
+                  <div className="h-12 w-12 bg-teal-600/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <MapPin className="h-6 w-6 text-teal-600" />
                   </div>
                   <div>
                     <h3 className="text-white font-semibold mb-1">Office</h3>
@@ -220,7 +220,7 @@ export default function Contact() {
               </div>
 
               {/* Business Hours */}
-              <div className="bg-gray-900 p-6 rounded-xl border border-gray-700">
+              <div className="bg-teal-950 p-6 rounded-xl border border-teal-700">
                 <h3 className="text-white font-semibold mb-4">Operating Hours</h3>
                 <div className="space-y-2 text-gray-400">
                   <div className="flex justify-between">
@@ -239,14 +239,14 @@ export default function Contact() {
               </div>
 
               {/* Enterprise */}
-              <div className="bg-gradient-to-br from-emerald-500/10 to-blue-500/10 p-6 rounded-xl border border-emerald-500/30">
+              <div className="bg-gradient-to-br from-teal-500/10 to-teal-400/10 p-6 rounded-xl border border-teal-500/30">
                 <h3 className="text-white font-semibold mb-2">Enterprise Solutions</h3>
                 <p className="text-gray-400 mb-4">
                   Need custom solutions or special integrations? Our sales team is ready to help.
                 </p>
                 <Link
                   to="/pricing"
-                  className="inline-block px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold text-sm"
+                  className="inline-block px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors font-semibold text-sm"
                 >
                   View Enterprise Plans
                 </Link>
@@ -257,7 +257,7 @@ export default function Contact() {
       </section>
 
       {/* FAQ Quick Links */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-800/50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-teal-900/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">
@@ -268,25 +268,25 @@ export default function Contact() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="bg-gray-900 p-6 rounded-xl border border-gray-700">
+            <div className="bg-teal-950 p-6 rounded-xl border border-teal-700">
               <h3 className="text-white font-semibold mb-2">How do I get started?</h3>
               <p className="text-gray-400 text-sm">
                 Sign up for free, set your alert preferences, and start receiving arbitrage opportunity notifications.
               </p>
             </div>
-            <div className="bg-gray-900 p-6 rounded-xl border border-gray-700">
+            <div className="bg-teal-950 p-6 rounded-xl border border-teal-700">
               <h3 className="text-white font-semibold mb-2">Is there a trial period?</h3>
               <p className="text-gray-400 text-sm">
                 The Free plan is available forever. No credit card required to get started.
               </p>
             </div>
-            <div className="bg-gray-900 p-6 rounded-xl border border-gray-700">
+            <div className="bg-teal-950 p-6 rounded-xl border border-teal-700">
               <h3 className="text-white font-semibold mb-2">Which platforms are supported?</h3>
               <p className="text-gray-400 text-sm">
                 We currently support Polymarket and Kalshi with plans to expand to other platforms.
               </p>
             </div>
-            <div className="bg-gray-900 p-6 rounded-xl border border-gray-700">
+            <div className="bg-teal-950 p-6 rounded-xl border border-teal-700">
               <h3 className="text-white font-semibold mb-2">What about data security?</h3>
               <p className="text-gray-400 text-sm">
                 All data is encrypted end-to-end and stored on secure servers with routine backups.
@@ -297,12 +297,12 @@ export default function Contact() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 border-t border-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+      <footer className="bg-teal-950 border-t border-teal-800 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <TrendingUp className="h-6 w-6 text-emerald-500" />
+                <TrendingUp className="h-6 w-6 text-teal-500" />
                 <span className="text-xl font-bold text-white">GambitAI</span>
               </div>
               <p className="text-gray-400 text-sm">
@@ -332,7 +332,7 @@ export default function Contact() {
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+          <div className="border-t border-teal-800 pt-8 text-center text-gray-400 text-sm">
             © 2025 GambitAI. All rights reserved.
           </div>
         </div>

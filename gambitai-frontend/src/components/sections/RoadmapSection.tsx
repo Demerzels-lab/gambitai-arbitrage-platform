@@ -101,7 +101,7 @@ export default function RoadmapSection({ showFeedback = true, className = '' }: 
   };
 
   return (
-    <section className={`py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/50 ${className}`}>
+    <section className={`py-20 px-4 sm:px-6 lg:px-8 bg-teal-900/50 ${className}`}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Product Roadmap</h2>
@@ -112,7 +112,7 @@ export default function RoadmapSection({ showFeedback = true, className = '' }: 
           {milestones.map((milestone, index) => (
             <div
               key={milestone.version}
-              className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 relative"
+              className="bg-teal-950/50 backdrop-blur-sm rounded-xl p-6 border border-teal-700 relative"
             >
               {/* Connecting line */}
               {index < milestones.length - 1 && (
@@ -164,14 +164,14 @@ export default function RoadmapSection({ showFeedback = true, className = '' }: 
 
         {/* Community Feedback */}
         {showFeedback && (
-          <div className="mt-8 max-w-5xl mx-auto bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-xl p-6 border border-blue-500/30">
+          <div className="mt-8 max-w-5xl mx-auto bg-gradient-to-br from-teal-400/10 to-teal-600/10 rounded-xl p-6 border border-teal-400/30">
             <h3 className="text-xl font-bold text-white mb-2">Have a Feature Request?</h3>
             <p className="text-gray-300 mb-4">
               We value your feedback! Help us shape the future of GambitAI by sharing your ideas and suggestions.
             </p>
             <a
               href="mailto:feedback@gambitai.com"
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg transition-colors"
+              className="inline-block bg-teal-500 hover:bg-teal-600 text-white font-medium px-6 py-3 rounded-lg transition-colors"
             >
               Send Feedback
             </a>

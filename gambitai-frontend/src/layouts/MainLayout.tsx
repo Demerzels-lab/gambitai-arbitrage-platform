@@ -28,14 +28,14 @@ export default function MainLayout({ children, user }: MainLayoutProps) {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <div className="min-h-screen bg-teal-950">
       {/* Top Navigation */}
-      <nav className="bg-gray-800/50 backdrop-blur-sm border-b border-gray-700 sticky top-0 z-50">
+      <nav className="bg-teal-900/50 backdrop-blur-sm border-b border-teal-700 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <Link to="/dashboard" className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-gradient-to-br from-teal-400 to-teal-700 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-lg">G</span>
                 </div>
                 <span className="text-white text-xl font-bold">GambitAI</span>
@@ -59,7 +59,7 @@ export default function MainLayout({ children, user }: MainLayoutProps) {
       {/* Sidebar + Main Content */}
       <div className="flex">
         {/* Sidebar */}
-        <aside className="w-64 bg-gray-800/30 backdrop-blur-sm border-r border-gray-700 min-h-[calc(100vh-4rem)] sticky top-16">
+        <aside className="w-64 bg-teal-900/30 backdrop-blur-sm border-r border-teal-700 min-h-[calc(100vh-4rem)] sticky top-16">
           <nav className="p-4 space-y-2">
             {navItems.map((item) => {
               const Icon = item.icon;
@@ -71,8 +71,8 @@ export default function MainLayout({ children, user }: MainLayoutProps) {
                   to={item.path}
                   className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all ${
                     isActive
-                      ? 'bg-blue-600 text-white shadow-lg'
-                      : 'text-gray-300 hover:bg-gray-700/50 hover:text-white'
+                      ? 'bg-teal-500 text-white shadow-lg'
+                      : 'text-gray-300 hover:bg-teal-800/50 hover:text-white'
                   }`}
                 >
                   <Icon className="w-5 h-5" />

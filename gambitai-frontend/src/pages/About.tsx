@@ -3,13 +3,13 @@ import { TrendingUp, Target, Zap, Users } from 'lucide-react';
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+    <div className="min-h-screen bg-teal-950">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-teal-950/95 backdrop-blur-sm border-b border-teal-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center space-x-2">
-              <TrendingUp className="h-8 w-8 text-emerald-500" />
+              <TrendingUp className="h-8 w-8 text-teal-500" />
               <span className="text-2xl font-bold text-white">GambitAI</span>
             </Link>
             <div className="hidden md:flex items-center space-x-8">
@@ -19,7 +19,7 @@ export default function About() {
               <Link to="/login" className="text-gray-300 hover:text-white transition-colors">Sign In</Link>
               <Link 
                 to="/signup" 
-                className="px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold"
+                className="px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors font-semibold"
               >
                 Get Started
               </Link>
@@ -56,13 +56,13 @@ export default function About() {
                 By leveraging AI technology and real-time monitoring, we help traders identify and execute arbitrage opportunities quickly and efficiently.
               </p>
             </div>
-            <div className="bg-gradient-to-br from-emerald-500/20 to-blue-500/20 p-12 rounded-2xl border border-emerald-500/30">
+            <div className="bg-gradient-to-br from-teal-500/20 to-teal-400/20 p-12 rounded-2xl border border-teal-500/30">
               <div className="text-center">
-                <div className="text-6xl font-bold text-emerald-500 mb-2">1,000+</div>
+                <div className="text-6xl font-bold text-teal-500 mb-2">1,000+</div>
                 <div className="text-gray-300 text-lg mb-8">Arbitrage Opportunities Detected</div>
-                <div className="text-6xl font-bold text-blue-500 mb-2">24/7</div>
+                <div className="text-6xl font-bold text-teal-400 mb-2">24/7</div>
                 <div className="text-gray-300 text-lg mb-8">Non-Stop Monitoring</div>
-                <div className="text-6xl font-bold text-purple-500 mb-2">95%</div>
+                <div className="text-6xl font-bold text-teal-600 mb-2">95%</div>
                 <div className="text-gray-300 text-lg">Accuracy Rate</div>
               </div>
             </div>
@@ -71,34 +71,34 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-800/50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-teal-900/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Our Values</h2>
             <p className="text-xl text-gray-400">Principles that guide every decision we make</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gray-900 p-8 rounded-xl border border-gray-700">
-              <div className="h-12 w-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
-                <Target className="h-6 w-6 text-emerald-500" />
+            <div className="bg-teal-950 p-8 rounded-xl border border-teal-700">
+              <div className="h-12 w-12 bg-teal-500/10 rounded-lg flex items-center justify-center mb-4">
+                <Target className="h-6 w-6 text-teal-500" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Accuracy</h3>
               <p className="text-gray-400">
                 We are committed to providing accurate and reliable data and analysis for every trading decision you make.
               </p>
             </div>
-            <div className="bg-gray-900 p-8 rounded-xl border border-gray-700">
-              <div className="h-12 w-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
-                <Zap className="h-6 w-6 text-blue-500" />
+            <div className="bg-teal-950 p-8 rounded-xl border border-teal-700">
+              <div className="h-12 w-12 bg-teal-400/10 rounded-lg flex items-center justify-center mb-4">
+                <Zap className="h-6 w-6 text-teal-400" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Speed</h3>
               <p className="text-gray-400">
                 Arbitrage opportunities appear and disappear in seconds. Our system ensures you're always one step ahead.
               </p>
             </div>
-            <div className="bg-gray-900 p-8 rounded-xl border border-gray-700">
-              <div className="h-12 w-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
-                <Users className="h-6 w-6 text-purple-500" />
+            <div className="bg-teal-950 p-8 rounded-xl border border-teal-700">
+              <div className="h-12 w-12 bg-teal-600/10 rounded-lg flex items-center justify-center mb-4">
+                <Users className="h-6 w-6 text-teal-600" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Transparency</h3>
               <p className="text-gray-400">
@@ -117,42 +117,42 @@ export default function About() {
             <p className="text-xl text-gray-400">Advanced infrastructure for real-time arbitrage detection</p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-900 p-8 rounded-xl border border-gray-700">
+            <div className="bg-teal-950 p-8 rounded-xl border border-teal-700">
               <h3 className="text-2xl font-bold text-white mb-4">Real-Time Data Processing</h3>
               <p className="text-gray-400 mb-4">
                 Our system processes data from multiple sources simultaneously using WebSocket connections to ensure no opportunity is missed.
               </p>
               <ul className="space-y-2 text-gray-300">
                 <li className="flex items-start">
-                  <span className="text-emerald-500 mr-2">•</span>
+                  <span className="text-teal-500 mr-2">•</span>
                   Polymarket WebSocket API
                 </li>
                 <li className="flex items-start">
-                  <span className="text-emerald-500 mr-2">•</span>
+                  <span className="text-teal-500 mr-2">•</span>
                   Kalshi REST API Integration
                 </li>
                 <li className="flex items-start">
-                  <span className="text-emerald-500 mr-2">•</span>
+                  <span className="text-teal-500 mr-2">•</span>
                   Sub-second latency monitoring
                 </li>
               </ul>
             </div>
-            <div className="bg-gray-900 p-8 rounded-xl border border-gray-700">
+            <div className="bg-teal-950 p-8 rounded-xl border border-teal-700">
               <h3 className="text-2xl font-bold text-white mb-4">AI-Powered Detection</h3>
               <p className="text-gray-400 mb-4">
                 Our machine learning algorithms analyze market patterns and identify arbitrage opportunities with high accuracy.
               </p>
               <ul className="space-y-2 text-gray-300">
                 <li className="flex items-start">
-                  <span className="text-emerald-500 mr-2">•</span>
+                  <span className="text-teal-500 mr-2">•</span>
                   Pattern recognition algorithms
                 </li>
                 <li className="flex items-start">
-                  <span className="text-emerald-500 mr-2">•</span>
+                  <span className="text-teal-500 mr-2">•</span>
                   Risk assessment models
                 </li>
                 <li className="flex items-start">
-                  <span className="text-emerald-500 mr-2">•</span>
+                  <span className="text-teal-500 mr-2">•</span>
                   Profit optimization calculations
                 </li>
               </ul>
@@ -162,7 +162,7 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-800/50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-teal-900/50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Join Us
@@ -172,7 +172,7 @@ export default function About() {
           </p>
           <Link
             to="/signup"
-            className="inline-block px-8 py-4 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold text-lg"
+            className="inline-block px-8 py-4 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors font-semibold text-lg"
           >
             Get Started Free
           </Link>
@@ -180,12 +180,12 @@ export default function About() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 border-t border-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+      <footer className="bg-teal-950 border-t border-teal-800 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <TrendingUp className="h-6 w-6 text-emerald-500" />
+                <TrendingUp className="h-6 w-6 text-teal-500" />
                 <span className="text-xl font-bold text-white">GambitAI</span>
               </div>
               <p className="text-gray-400 text-sm">
@@ -215,7 +215,7 @@ export default function About() {
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+          <div className="border-t border-teal-800 pt-8 text-center text-gray-400 text-sm">
             © 2025 GambitAI. All rights reserved.
           </div>
         </div>

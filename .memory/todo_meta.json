@@ -5,14 +5,14 @@
         "id": "1",
         "content": "Restrukturisasi project file untuk Vercel deployment",
         "details": "1. Hapus file .md, test reports, dan file dokumentasi yang tidak diperlukan untuk deployment\n2. Bersihkan folder dari file temporary dan documentation\n3. Pastikan hanya ada source code essential yang dibutuhkan Vercel untuk read sebagai Vite project\n4. Update .gitignore untuk exclude file yang tidak perlu",
-        "status": "pending",
+        "status": "completed",
         "priority": "high"
       },
       "2": {
         "id": "2",
         "content": "Refactor color palette ke teal-based theme",
         "details": "1. Update Tailwind config dengan palette baru:\n   - Background: #000D1D (dark teal base)\n   - Main color: #26FFF6 (bright teal accent)\n2. Update CSS variables dan color definitions\n3. Update semua komponen yang menggunakan color classes\n4. Pastikan consistency across all pages (Landing, Dashboard, Markets, Analytics)\n5. Update dark theme implementation dengan palette baru",
-        "status": "pending",
+        "status": "completed",
         "priority": "high"
       }
     }
