@@ -22,6 +22,7 @@ import Settings from './pages/Settings';
 
 // Layout
 import MainLayout from './layouts/MainLayout';
+import BackgroundEffect from './components/BackgroundEffect';
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
@@ -53,106 +54,109 @@ function App() {
   }
 
   return (
-    <Router>
-      <Routes>
-        {/* Public routes */}
-        <Route path="/" element={<Landing />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/pricing" element={<PricingPage />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={!user ? <Login /> : <Navigate to="/dashboard" />} />
-        <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/dashboard" />} />
+    <>
+    <BackgroundEffect />
+      <Router>
+        <Routes>
+          {/* Public routes */}
+          <Route path="/" element={<Landing />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={!user ? <Login /> : <Navigate to="/dashboard" />} />
+          <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/dashboard" />} />
 
-        {/* Protected routes */}
-        <Route
-          path="/dashboard"
-          element={
-            user ? (
-              <MainLayout user={user}>
-                <Dashboard />
-              </MainLayout>
-            ) : (
-              <Navigate to="/login" />
-            )
-          }
-        />
-        <Route
-          path="/dashboard/how-it-works"
-          element={
-            user ? (
-              <MainLayout user={user}>
-                <HowItWorks />
-              </MainLayout>
-            ) : (
-              <Navigate to="/login" />
-            )
-          }
-        />
-        <Route
-          path="/dashboard/roadmap"
-          element={
-            user ? (
-              <MainLayout user={user}>
-                <Roadmap />
-              </MainLayout>
-            ) : (
-              <Navigate to="/login" />
-            )
-          }
-        />
-        <Route
-          path="/markets"
-          element={
-            user ? (
-              <MainLayout user={user}>
-                <Markets />
-              </MainLayout>
-            ) : (
-              <Navigate to="/login" />
-            )
-          }
-        />
-        <Route
-          path="/analytics"
-          element={
-            user ? (
-              <MainLayout user={user}>
-                <Analytics />
-              </MainLayout>
-            ) : (
-              <Navigate to="/login" />
-            )
-          }
-        />
-        <Route
-          path="/calculator"
-          element={
-            user ? (
-              <MainLayout user={user}>
-                <Calculator />
-              </MainLayout>
-            ) : (
-              <Navigate to="/login" />
-            )
-          }
-        />
-        <Route
-          path="/settings"
-          element={
-            user ? (
-              <MainLayout user={user}>
-                <Settings />
-              </MainLayout>
-            ) : (
-              <Navigate to="/login" />
-            )
-          }
-        />
+          {/* Protected routes */}
+          <Route
+            path="/dashboard"
+            element={
+              user ? (
+                <MainLayout user={user}>
+                  <Dashboard />
+                </MainLayout>
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/dashboard/how-it-works"
+            element={
+              user ? (
+                <MainLayout user={user}>
+                  <HowItWorks />
+                </MainLayout>
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/dashboard/roadmap"
+            element={
+              user ? (
+                <MainLayout user={user}>
+                  <Roadmap />
+                </MainLayout>
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/markets"
+            element={
+              user ? (
+                <MainLayout user={user}>
+                  <Markets />
+                </MainLayout>
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/analytics"
+            element={
+              user ? (
+                <MainLayout user={user}>
+                  <Analytics />
+                </MainLayout>
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/calculator"
+            element={
+              user ? (
+                <MainLayout user={user}>
+                  <Calculator />
+                </MainLayout>
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              user ? (
+                <MainLayout user={user}>
+                  <Settings />
+                </MainLayout>
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
 
-        {/* Catch all - redirect to landing */}
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </Router>
+          {/* Catch all - redirect to landing */}
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 

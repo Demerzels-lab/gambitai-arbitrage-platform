@@ -31,12 +31,12 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-950 via-teal-900 to-teal-950 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-transparent flex items-center justify-center p-4">
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
           <div className="inline-flex items-center space-x-3 mb-4">
             <div className="w-12 h-12 bg-gradient-to-br from-teal-400 to-teal-700 rounded-xl flex items-center justify-center">
-              <TrendingUp className="w-7 h-7 text-white" />
+              <img src="/logo.jpeg" alt="GambitAI Logo" className="w-7 h-7" />
             </div>
             <span className="text-white text-3xl font-bold">GambitAI</span>
           </div>
