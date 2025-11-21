@@ -1,5 +1,11 @@
 import React from 'react';
 import { CheckCircle2, Circle, TrendingUp } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+interface RoadmapSectionProps {
+  showFeedback?: boolean;
+  className?: string;
+}
 
 const roadmapData = [
   {
@@ -52,9 +58,9 @@ const roadmapData = [
   }
 ];
 
-const RoadmapSection = () => {
+const RoadmapSection: React.FC<RoadmapSectionProps> = ({ showFeedback = false, className = "" }) => {
   return (
-    <section className="relative py-24 overflow-hidden" id="roadmap">
+    <section className={`relative py-24 overflow-hidden ${className}`} id="roadmap">
       {/* Ambient Glow behind the section */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-teal-500/10 rounded-full blur-[120px] -z-10" />
 
@@ -87,7 +93,14 @@ const RoadmapSection = () => {
               const isActive = item.status === 'active';
 
               return (
-                <div key={index} className={`relative flex flex-col md:flex-row ${isEven ? 'md:flex-row-reverse' : ''} items-center justify-between group`}>
+                <motion.div 
+                  key={index} 
+                  className={`relative flex flex-col md:flex-row ${isEven ? 'md:flex-row-reverse' : ''} items-center justify-between group`}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                >
                   
                   {/* Center Node (The "Dot") */}
                   <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center z-20">
@@ -154,7 +167,7 @@ const RoadmapSection = () => {
                     </div>
                   </div>
 
-                </div>
+                </motion.div>
               );
             })}
           </div>
