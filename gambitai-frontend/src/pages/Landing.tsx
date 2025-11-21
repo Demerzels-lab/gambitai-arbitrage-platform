@@ -134,7 +134,7 @@ export default function Landing() {
 
       {/* Features Section */}
       <motion.section
-        className="py-20 px-4 sm:px-6 lg:px-8 bg-teal-900/50"
+        className="py-20 px-4 sm:px-6 lg:px-8"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -218,11 +218,11 @@ export default function Landing() {
       <HowItWorksSection showCTA={false} />
 
       {/* Roadmap */}
-      <RoadmapSection showFeedback={true} />
+      <RoadmapSection />
 
       {/* Pricing Section */}
       <motion.section
-        className="py-20 px-4 sm:px-6 lg:px-8 bg-teal-900/50"
+        className="py-20 px-4 sm:px-6 lg:px-8"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
