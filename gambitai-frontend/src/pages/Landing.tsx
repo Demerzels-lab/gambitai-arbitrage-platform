@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { ArrowRight, TrendingUp, Zap, Shield, Bell, BarChart3, Calculator, Twitter } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { supabase } from '../lib/supabase';
 import { User } from '@supabase/supabase-js';
 import HowItWorksSection from '../components/sections/HowItWorksSection';
@@ -59,12 +60,17 @@ export default function Landing() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <motion.section 
+        initial={{ opacity: 0, y: 50 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="pt-32 pb-20 px-4 sm:px-6 lg:px-8"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
               Detect Arbitrage Opportunities
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-300">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-300 drop-shadow-lg">
                 In Real-Time
               </span>
             </h1>
@@ -85,7 +91,7 @@ export default function Landing() {
                 <>
                   <Link 
                     to="/signup"
-                    className="px-8 py-4 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-all font-semibold text-lg flex items-center gap-2 shadow-lg hover:shadow-teal-500/50"
+                    className="px-8 py-4 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-all font-semibold text-lg flex items-center gap-2 shadow-lg hover:shadow-teal-500/50 hover:shadow-2xl"
                   >
                     Get Started Free
                     <ArrowRight className="h-5 w-5" />
@@ -107,27 +113,33 @@ export default function Landing() {
           {/* Stats */}
           <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-teal-500 mb-2">1,000+</div>
+              <div className="text-4xl font-bold text-teal-500 mb-2 drop-shadow-lg">1,000+</div>
               <div className="text-gray-400">Opportunities Detected</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-teal-400 mb-2">24/7</div>
+              <div className="text-4xl font-bold text-teal-400 mb-2 drop-shadow-lg">24/7</div>
               <div className="text-gray-400">Real-Time Monitoring</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-teal-600 mb-2">95%</div>
+              <div className="text-4xl font-bold text-teal-600 mb-2 drop-shadow-lg">95%</div>
               <div className="text-gray-400">Detection Accuracy</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-orange-500 mb-2">&lt;1s</div>
+              <div className="text-4xl font-bold text-orange-500 mb-2 drop-shadow-lg">&lt;1s</div>
               <div className="text-gray-400">Instant Notifications</div>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-teal-900/50">
+      <motion.section
+        className="py-20 px-4 sm:px-6 lg:px-8 bg-teal-900/50"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -139,7 +151,7 @@ export default function Landing() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-teal-950 p-8 rounded-xl border border-teal-700 hover:border-teal-500 transition-colors">
+            <div className="bg-teal-950 p-8 rounded-xl border border-teal-700 hover:border-teal-500 transition-all hover:shadow-lg hover:shadow-teal-500/20">
               <div className="h-12 w-12 bg-teal-500/10 rounded-lg flex items-center justify-center mb-4">
                 <Zap className="h-6 w-6 text-teal-500" />
               </div>
@@ -149,7 +161,7 @@ export default function Landing() {
               </p>
             </div>
 
-            <div className="bg-teal-950 p-8 rounded-xl border border-teal-700 hover:border-teal-400 transition-colors">
+            <div className="bg-teal-950 p-8 rounded-xl border border-teal-700 hover:border-teal-400 transition-all hover:shadow-lg hover:shadow-teal-400/20">
               <div className="h-12 w-12 bg-teal-400/10 rounded-lg flex items-center justify-center mb-4">
                 <Bell className="h-6 w-6 text-teal-400" />
               </div>
@@ -159,7 +171,7 @@ export default function Landing() {
               </p>
             </div>
 
-            <div className="bg-teal-950 p-8 rounded-xl border border-teal-700 hover:border-teal-600 transition-colors">
+            <div className="bg-teal-950 p-8 rounded-xl border border-teal-700 hover:border-teal-600 transition-all hover:shadow-lg hover:shadow-teal-600/20">
               <div className="h-12 w-12 bg-teal-600/10 rounded-lg flex items-center justify-center mb-4">
                 <BarChart3 className="h-6 w-6 text-teal-600" />
               </div>
@@ -169,7 +181,7 @@ export default function Landing() {
               </p>
             </div>
 
-            <div className="bg-teal-950 p-8 rounded-xl border border-teal-700 hover:border-orange-500 transition-colors">
+            <div className="bg-teal-950 p-8 rounded-xl border border-teal-700 hover:border-orange-500 transition-all hover:shadow-lg hover:shadow-orange-500/20">
               <div className="h-12 w-12 bg-orange-500/10 rounded-lg flex items-center justify-center mb-4">
                 <Calculator className="h-6 w-6 text-orange-500" />
               </div>
@@ -179,7 +191,7 @@ export default function Landing() {
               </p>
             </div>
 
-            <div className="bg-teal-950 p-8 rounded-xl border border-teal-700 hover:border-teal-500 transition-colors">
+            <div className="bg-teal-950 p-8 rounded-xl border border-teal-700 hover:border-teal-500 transition-all hover:shadow-lg hover:shadow-teal-500/20">
               <div className="h-12 w-12 bg-teal-500/10 rounded-lg flex items-center justify-center mb-4">
                 <Shield className="h-6 w-6 text-teal-500" />
               </div>
@@ -189,7 +201,7 @@ export default function Landing() {
               </p>
             </div>
 
-            <div className="bg-teal-950 p-8 rounded-xl border border-teal-700 hover:border-cyan-500 transition-colors">
+            <div className="bg-teal-950 p-8 rounded-xl border border-teal-700 hover:border-cyan-500 transition-all hover:shadow-lg hover:shadow-cyan-500/20">
               <div className="h-12 w-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-4">
                 <TrendingUp className="h-6 w-6 text-cyan-500" />
               </div>
@@ -200,7 +212,7 @@ export default function Landing() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* How It Works - Detailed */}
       <HowItWorksSection showCTA={false} />
@@ -209,7 +221,13 @@ export default function Landing() {
       <RoadmapSection showFeedback={true} />
 
       {/* Pricing Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-teal-900/50">
+      <motion.section
+        className="py-20 px-4 sm:px-6 lg:px-8 bg-teal-900/50"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -331,10 +349,16 @@ export default function Landing() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <motion.section
+        className="py-20 px-4 sm:px-6 lg:px-8"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Ready to Start Arbitrage Trading?
@@ -344,13 +368,13 @@ export default function Landing() {
           </p>
           <Link
             to="/signup"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-all font-semibold text-lg shadow-lg hover:shadow-teal-500/50"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-all font-semibold text-lg shadow-lg hover:shadow-teal-500/50 hover:shadow-2xl"
           >
             Get Started Free
             <ArrowRight className="h-5 w-5" />
           </Link>
         </div>
-      </section>
+      </motion.section>
 
       {/* Footer */}
       <footer className="bg-teal-950 border-t border-teal-800 py-12 px-4 sm:px-6 lg:px-8">

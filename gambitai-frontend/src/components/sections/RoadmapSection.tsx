@@ -1,4 +1,5 @@
 import { CheckCircle, Circle, Clock } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface Milestone {
   version: string;
@@ -110,9 +111,13 @@ export default function RoadmapSection({ showFeedback = true, className = '' }: 
 
         <div className="space-y-6 max-w-5xl mx-auto">
           {milestones.map((milestone, index) => (
-            <div
+            <motion.div
               key={milestone.version}
               className="bg-teal-950/50 backdrop-blur-sm rounded-xl p-6 border border-teal-700 relative"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
             >
               {/* Connecting line */}
               {index < milestones.length - 1 && (
@@ -158,13 +163,19 @@ export default function RoadmapSection({ showFeedback = true, className = '' }: 
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Community Feedback */}
         {showFeedback && (
-          <div className="mt-8 max-w-5xl mx-auto bg-gradient-to-br from-teal-400/10 to-teal-600/10 rounded-xl p-6 border border-teal-400/30">
+          <motion.div
+            className="mt-8 max-w-5xl mx-auto bg-gradient-to-br from-teal-400/10 to-teal-600/10 rounded-xl p-6 border border-teal-400/30"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: milestones.length * 0.2 }}
+            viewport={{ once: true }}
+          >
             <h3 className="text-xl font-bold text-white mb-2">Have a Feature Request?</h3>
             <p className="text-gray-300 mb-4">
               We value your feedback! Help us shape the future of GambitAI by sharing your ideas and suggestions.
@@ -175,7 +186,7 @@ export default function RoadmapSection({ showFeedback = true, className = '' }: 
             >
               Send Feedback
             </a>
-          </div>
+          </motion.div>
         )}
       </div>
     </section>
