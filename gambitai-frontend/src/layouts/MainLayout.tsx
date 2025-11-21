@@ -34,10 +34,8 @@ export default function MainLayout({ children, user }: MainLayoutProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <Link to="/dashboard" className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-br from-teal-400 to-teal-700 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">G</span>
-                </div>
+              <Link to="/" className="flex items-center space-x-2">
+                <img src="/logo.jpeg" alt="GambitAI Logo" className="h-8 w-8" />
                 <span className="text-white text-xl font-bold">GambitAI</span>
               </Link>
             </div>

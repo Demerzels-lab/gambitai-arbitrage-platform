@@ -1,9 +1,19 @@
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { ArrowRight, TrendingUp, Zap, Shield, Bell, BarChart3, Calculator } from 'lucide-react';
+import { supabase } from '../lib/supabase';
+import { User } from '@supabase/supabase-js';
 import HowItWorksSection from '../components/sections/HowItWorksSection';
 import RoadmapSection from '../components/sections/RoadmapSection';
 
 export default function Landing() {
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+  }, []);
   return (
     <div className="min-h-screen bg-transparent">
       {/* Navigation */}
@@ -18,18 +28,28 @@ export default function Landing() {
               <Link to="/about" className="text-gray-300 hover:text-white transition-colors">About</Link>
               <Link to="/pricing" className="text-gray-300 hover:text-white transition-colors">Pricing</Link>
               <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link>
-              <Link to="/login" className="text-gray-300 hover:text-white transition-colors">Sign In</Link>
-              <Link 
-                to="/signup" 
-                className="px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors font-semibold"
-              >
-                Get Started
-              </Link>
+              {user ? (
+                <span className="text-gray-300 text-sm">{user.email}</span>
+              ) : (
+                <>
+                  <Link to="/login" className="text-gray-300 hover:text-white transition-colors">Sign In</Link>
+                  <Link 
+                    to="/signup" 
+                    className="px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors font-semibold"
+                  >
+                    Get Started
+                  </Link>
+                </>
+              )}
             </div>
             <div className="md:hidden">
-              <Link to="/signup" className="px-4 py-2 bg-teal-600 text-white rounded-lg text-sm font-semibold">
-                Start
-              </Link>
+              {user ? (
+                <span className="text-gray-300 text-sm px-4 py-2">{user.email}</span>
+              ) : (
+                <Link to="/signup" className="px-4 py-2 bg-teal-600 text-white rounded-lg text-sm font-semibold">
+                  Start
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -50,19 +70,31 @@ export default function Landing() {
               Get risk-free profits with instant notifications and real-time data analysis.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link 
-                to="/signup"
-                className="px-8 py-4 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-all font-semibold text-lg flex items-center gap-2 shadow-lg hover:shadow-teal-500/50"
-              >
-                Get Started Free
-                <ArrowRight className="h-5 w-5" />
-              </Link>
-              <Link 
-                to="/login"
-                className="px-8 py-4 bg-teal-900 text-white rounded-lg hover:bg-teal-800 transition-colors font-semibold text-lg border border-teal-700"
-              >
-                View Demo
-              </Link>
+              {user ? (
+                <Link 
+                  to="/dashboard"
+                  className="px-8 py-4 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-all font-semibold text-lg flex items-center gap-2 shadow-lg hover:shadow-teal-500/50"
+                >
+                  Back to Dashboard
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+              ) : (
+                <>
+                  <Link 
+                    to="/signup"
+                    className="px-8 py-4 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-all font-semibold text-lg flex items-center gap-2 shadow-lg hover:shadow-teal-500/50"
+                  >
+                    Get Started Free
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                  <Link 
+                    to="/login"
+                    className="px-8 py-4 bg-teal-900 text-white rounded-lg hover:bg-teal-800 transition-colors font-semibold text-lg border border-teal-700"
+                  >
+                    View Demo
+                  </Link>
+                </>
+              )}
             </div>
             <p className="mt-6 text-gray-400 text-sm">
               No credit card required. Get started in 30 seconds.
