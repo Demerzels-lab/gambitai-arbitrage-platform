@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { ArrowRight, TrendingUp, Zap, Shield, Bell, BarChart3, Calculator } from 'lucide-react';
+import { ArrowRight, TrendingUp, Zap, Shield, Bell, BarChart3, Calculator, Twitter } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { User } from '@supabase/supabase-js';
 import HowItWorksSection from '../components/sections/HowItWorksSection';
@@ -28,6 +28,9 @@ export default function Landing() {
               <Link to="/about" className="text-gray-300 hover:text-white transition-colors">About</Link>
               <Link to="/pricing" className="text-gray-300 hover:text-white transition-colors">Pricing</Link>
               <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link>
+              <a href="https://x.com/GambittAI" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+                <Twitter className="h-5 w-5" />
+              </a>
               {user ? (
                 <span className="text-gray-300 text-sm">{user.email}</span>
               ) : (

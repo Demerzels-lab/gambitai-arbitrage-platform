@@ -80,30 +80,6 @@ function App() {
             }
           />
           <Route
-            path="/dashboard/how-it-works"
-            element={
-              user ? (
-                <MainLayout user={user}>
-                  <HowItWorks />
-                </MainLayout>
-              ) : (
-                <Navigate to="/login" />
-              )
-            }
-          />
-          <Route
-            path="/dashboard/roadmap"
-            element={
-              user ? (
-                <MainLayout user={user}>
-                  <Roadmap />
-                </MainLayout>
-              ) : (
-                <Navigate to="/login" />
-              )
-            }
-          />
-          <Route
             path="/markets"
             element={
               user ? (

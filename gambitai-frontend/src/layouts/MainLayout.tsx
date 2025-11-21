@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { User } from '@supabase/supabase-js';
 import { supabase } from '../lib/supabase';
-import { LayoutDashboard, TrendingUp, BarChart3, Calculator, BookOpen, Map, Settings, LogOut } from 'lucide-react';
+import { LayoutDashboard, TrendingUp, BarChart3, Calculator, Settings, LogOut, Twitter } from 'lucide-react';
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -22,8 +22,6 @@ export default function MainLayout({ children, user }: MainLayoutProps) {
     { path: '/markets', label: 'Markets', icon: TrendingUp },
     { path: '/analytics', label: 'Analytics', icon: BarChart3 },
     { path: '/calculator', label: 'Calculator', icon: Calculator },
-    { path: '/dashboard/how-it-works', label: 'How It Works', icon: BookOpen },
-    { path: '/dashboard/roadmap', label: 'Roadmap', icon: Map },
     { path: '/settings', label: 'Settings', icon: Settings },
   ];
 
@@ -41,6 +39,9 @@ export default function MainLayout({ children, user }: MainLayoutProps) {
             </div>
 
             <div className="flex items-center space-x-4">
+              <a href="https://x.com/GambittAI" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+                <Twitter className="w-5 h-5" />
+              </a>
               <span className="text-gray-300 text-sm">{user.email}</span>
               <button
                 onClick={handleLogout}
